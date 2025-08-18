@@ -19,10 +19,10 @@ const Footer = () => {
   ];
 
   const menuHighlights = [
-    "صداقت کلاسیک",
-    "صداقت چیکن دلوکس",
-    "صداقت دبل",
-    "صداقت وجی"
+    "برگر کوچک - ۱۰ افغانی",
+    "برگر متوسط - ۳۰ افغانی",
+    "برگر بزرگ - ۵۰ افغانی",
+    "برگر دوبل - ۷۰ افغانی"
   ];
 
   return (
@@ -42,8 +42,8 @@ const Footer = () => {
             </div>
             
             <p className="text-warm-cream/90 font-persian leading-relaxed">
-              رستوران صداقت برگر با بیش از ۵ سال تجربه، بهترین برگرهای شهر را با 
-              اصالت طعم و کیفیت بی‌نظیر به شما ارائه می‌دهد.
+              رستوران صداقت برگر تحت مدیریت قاری صاحب صفی الله محمدی با همکاری MJ Ibrahim، 
+              برای خود و خانواده تان بهترین غذا را ارائه می‌دهد.
             </p>
 
             <div className="flex items-center space-x-4 space-x-reverse">
@@ -91,16 +91,15 @@ const Footer = () => {
               <div className="flex items-start space-x-3 space-x-reverse">
                 <Phone className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-warm-cream/90 font-persian">۰۲۱-۱۲۳۴۵۶۷۸</p>
-                  <p className="text-warm-cream/90 font-persian">۰۲۱-۸۷۶۵۴۳۲۱</p>
+                  <p className="text-warm-cream/90 font-persian">+93789963664</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-3 space-x-reverse">
                 <MapPin className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-warm-cream/90 font-persian">تهران، خیابان ولیعصر</p>
-                  <p className="text-warm-cream/90 font-persian">نرسیده به میدان ونک، پلاک ۱۲۳</p>
+                  <p className="text-warm-cream/90 font-persian">افغانستان، پروان، شهر چاریکار</p>
+                  <p className="text-warm-cream/90 font-persian">جنب گذر اکرم خان مقابل شیریخ پزی حاجی جان آغا</p>
                 </div>
               </div>
               
@@ -116,13 +115,17 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-4 space-x-reverse">
               <a
-                href="#"
-                className="bg-pink-500 p-2 rounded-full hover:bg-pink-600 transition-smooth"
+                href="https://www.facebook.com/share/19cPtVJQrg/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 p-2 rounded-full hover:bg-blue-600 transition-smooth"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://maps.app.goo.gl/RYrz56uhyhrVX4NdA"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-green-500 p-2 rounded-full hover:bg-green-600 transition-smooth"
               >
                 <MessageCircle className="w-5 h-5" />

@@ -18,13 +18,13 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "تلفن سفارش",
-      details: ["۰۲۱-۱۲۳۴۵۶۷۸", "۰۲۱-۸۷۶۵۴۳۲۱"],
+      details: ["+93789963664"],
       color: "warm-orange"
     },
     {
       icon: MapPin,
       title: "آدرس",
-      details: ["تهران، خیابان ولیعصر", "نرسیده به میدان ونک، پلاک ۱۲۳"],
+      details: ["افغانستان، پروان، شهر چاریکار", "جنب گذر اکرم خان مقابل شیریخ پزی حاجی جان آغا"],
       color: "warm-red"
     },
     {
@@ -38,14 +38,14 @@ const ContactSection = () => {
   const socialLinks = [
     {
       icon: Instagram,
-      name: "اینستاگرام",
-      handle: "@sedaghatburger",
-      color: "bg-pink-500"
+      name: "فیس بوک",
+      handle: "facebook.com/share/19cPtVJQrg/",
+      color: "bg-blue-500"
     },
     {
       icon: MessageCircle,
-      name: "واتس‌اپ",
-      handle: "۰۹۱۲۳۴۵۶۷۸۹",
+      name: "گوگل مپ",
+      handle: "maps.app.goo.gl/RYrz56uhyhrVX4NdA",
       color: "bg-green-500"
     }
   ];

@@ -39,7 +39,7 @@ const HeroSection = () => {
           </p>
           
           <p className="text-lg md:text-xl mb-8 text-gray-200 animate-fade-in-up font-persian">
-            بهترین برگرهای شهر را در رستوران صداقت تجربه کنید
+            برای خود و خانواده تان بهترین غذا را بدهید
           </p>
 
           {/* CTA Buttons */}
@@ -49,7 +49,7 @@ const HeroSection = () => {
               <ArrowLeft className="w-5 h-5 mr-2" />
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-black font-persian">
-              سفارش تلفنی: ۰۲۱-۱۲۳۴۵۶۷۸
+              سفارش تلفنی: +93789963664
             </Button>
           </div>
 

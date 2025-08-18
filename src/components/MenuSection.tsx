@@ -2,77 +2,205 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Plus, Flame, Leaf } from "lucide-react";
-import beefBurger from "@/assets/beef-burger.jpg";
-import chickenBurger from "@/assets/chicken-burger.jpg";
-import veggieBurger from "@/assets/veggie-burger.jpg";
+import frenchFries from "@/assets/french-fries.jpg";
+import afghanBreakfast from "@/assets/afghan-breakfast.jpg";
+import afghanDrinks from "@/assets/afghan-drinks.jpg";
+import smallBurger from "@/assets/small-burger.jpg";
+import mediumBurger from "@/assets/medium-burger.jpg";
+import largeBurger from "@/assets/large-burger.jpg";
 
 const MenuSection = () => {
   const menuItems = [
+    // برگرها
     {
       id: 1,
-      name: "صداقت کلاسیک",
-      description: "برگر گوشت گاو تازه با پنیر چدار، کاهو، گوجه، پیاز و سس مخصوص",
-      price: "۱۲۵,۰۰۰",
-      image: beefBurger,
-      rating: 4.9,
-      isPopular: true,
+      name: "برگر کوچک",
+      description: "برگر ساده با نان و گوشت",
+      price: "۱۰",
+      image: smallBurger,
+      rating: 4.5,
+      isPopular: false,
       isSpicy: false,
-      category: "گوشت گاو"
+      category: "برگر"
     },
     {
       id: 2,
-      name: "صداقت چیکن دلوکس",
-      description: "برگر مرغ کریسپی با سس رنچ، کاهو تازه، گوجه و پنیر موزارلا",
-      price: "۱۱۰,۰۰۰",
-      image: chickenBurger,
-      rating: 4.8,
+      name: "برگر ساده",
+      description: "برگر با سبزیجات اساسی",
+      price: "۲۰",
+      image: smallBurger,
+      rating: 4.6,
       isPopular: false,
-      isSpicy: true,
-      category: "مرغ"
+      isSpicy: false,
+      category: "برگر"
     },
     {
       id: 3,
-      name: "صداقت وجی",
-      description: "برگر گیاهی با سبزیجات تازه، آووکادو، پنیر وگان و سس طبیعی",
-      price: "۹۵,۰۰۰",
-      image: veggieBurger,
-      rating: 4.7,
-      isPopular: false,
+      name: "برگر متوسط",
+      description: "برگر با پنیر و سبزیجات کامل",
+      price: "۳۰",
+      image: mediumBurger,
+      rating: 4.8,
+      isPopular: true,
       isSpicy: false,
-      category: "گیاهی"
+      category: "برگر"
     },
     {
       id: 4,
-      name: "صداقت دبل",
-      description: "دو عدد برگر گوشت گاو، دو لایه پنیر، بیکن، سس ویژه و سبزیجات",
-      price: "۱۶۵,۰۰۰",
-      image: beefBurger,
+      name: "برگر بزرگ",
+      description: "برگر بزرگ با تمام مواد اولیه",
+      price: "۵۰",
+      image: largeBurger,
       rating: 4.9,
       isPopular: true,
       isSpicy: false,
-      category: "گوشت گاو"
+      category: "برگر"
     },
     {
       id: 5,
-      name: "صداقت اسپایسی",
-      description: "برگر مرغ تند با فلفل جالاپینو، سس سریراچا و پنیر پپرجک",
-      price: "۱۲۰,۰۰۰",
-      image: chickenBurger,
-      rating: 4.6,
-      isPopular: false,
-      isSpicy: true,
-      category: "مرغ"
+      name: "برگر دوبل",
+      description: "دو عدد گوشت با پنیر و سبزیجات",
+      price: "۷۰",
+      image: largeBurger,
+      rating: 4.9,
+      isPopular: true,
+      isSpicy: false,
+      category: "برگر"
     },
+    // نوشیدنی های سرد
     {
       id: 6,
-      name: "صداقت آووکادو",
-      description: "برگر گیاهی پریمیوم با آووکادو تازه، قارچ گریل و سس پستو",
-      price: "۱۰۵,۰۰۰",
-      image: veggieBurger,
-      rating: 4.8,
+      name: "انرژی ایکس بال",
+      description: "نوشیدنی انرژی زا سرد",
+      price: "۵",
+      image: afghanDrinks,
+      rating: 4.3,
       isPopular: false,
       isSpicy: false,
-      category: "گیاهی"
+      category: "نوشیدنی"
+    },
+    {
+      id: 7,
+      name: "پپسی",
+      description: "نوشیدنی گازدار پپسی",
+      price: "۳",
+      image: afghanDrinks,
+      rating: 4.5,
+      isPopular: true,
+      isSpicy: false,
+      category: "نوشیدنی"
+    },
+    {
+      id: 8,
+      name: "کوک کولا",
+      description: "نوشیدنی گازدار کوکاکولا",
+      price: "۳",
+      image: afghanDrinks,
+      rating: 4.5,
+      isPopular: true,
+      isSpicy: false,
+      category: "نوشیدنی"
+    },
+    {
+      id: 9,
+      name: "انرژی الکوزی",
+      description: "نوشیدنی انرژی زا الکوزی",
+      price: "۶",
+      image: afghanDrinks,
+      rating: 4.2,
+      isPopular: false,
+      isSpicy: false,
+      category: "نوشیدنی"
+    },
+    {
+      id: 10,
+      name: "پارادایس",
+      description: "آبمیوه طبیعی پارادایس",
+      price: "۴",
+      image: afghanDrinks,
+      rating: 4.4,
+      isPopular: false,
+      isSpicy: false,
+      category: "نوشیدنی"
+    },
+    {
+      id: 11,
+      name: "آب معدنی کوچک",
+      description: "بطری آب معدنی کوچک",
+      price: "۲",
+      image: afghanDrinks,
+      rating: 4.0,
+      isPopular: false,
+      isSpicy: false,
+      category: "نوشیدنی"
+    },
+    {
+      id: 12,
+      name: "آب معدنی بزرگ",
+      description: "بطری آب معدنی بزرگ",
+      price: "۴",
+      image: afghanDrinks,
+      rating: 4.0,
+      isPopular: false,
+      isSpicy: false,
+      category: "نوشیدنی"
+    },
+    // صبحانه
+    {
+      id: 13,
+      name: "تخم مرغ جوشانده",
+      description: "تخم مرغ تازه آب پز با نان",
+      price: "۸",
+      image: afghanBreakfast,
+      rating: 4.6,
+      isPopular: false,
+      isSpicy: false,
+      category: "صبحانه"
+    },
+    {
+      id: 14,
+      name: "املت",
+      description: "املت تازه با سبزیجات",
+      price: "۱۲",
+      image: afghanBreakfast,
+      rating: 4.7,
+      isPopular: true,
+      isSpicy: false,
+      category: "صبحانه"
+    },
+    {
+      id: 15,
+      name: "کرایی",
+      description: "تخم مرغ سرخ شده با طعم محلی",
+      price: "۱۰",
+      image: afghanBreakfast,
+      rating: 4.5,
+      isPopular: false,
+      isSpicy: false,
+      category: "صبحانه"
+    },
+    {
+      id: 16,
+      name: "چای سبز با نان داغ",
+      description: "چای سبز تازه دم با نان گرم",
+      price: "۵",
+      image: afghanBreakfast,
+      rating: 4.8,
+      isPopular: true,
+      isSpicy: false,
+      category: "صبحانه"
+    },
+    // سیب زمینی
+    {
+      id: 17,
+      name: "سیب زمینی سرخ کرده",
+      description: "سیب زمینی طلایی و کریسپی",
+      price: "۸",
+      image: frenchFries,
+      rating: 4.7,
+      isPopular: true,
+      isSpicy: false,
+      category: "پیش غذا"
     }
   ];
 
@@ -95,13 +223,16 @@ const MenuSection = () => {
             همه موارد
           </Badge>
           <Badge variant="outline" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
-            گوشت گاو
+            برگر
           </Badge>
           <Badge variant="outline" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
-            مرغ
+            نوشیدنی
           </Badge>
           <Badge variant="outline" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
-            گیاهی
+            صبحانه
+          </Badge>
+          <Badge variant="outline" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
+            پیش غذا
           </Badge>
         </div>
 
@@ -125,7 +256,7 @@ const MenuSection = () => {
                     <Flame className="w-4 h-4" />
                   </div>
                 )}
-                {item.category === "گیاهی" && (
+                {item.category === "صبحانه" && (
                   <div className="absolute top-4 left-4 bg-green-500 text-white rounded-full p-2">
                     <Leaf className="w-4 h-4" />
                   </div>
@@ -146,9 +277,9 @@ const MenuSection = () => {
                 </p>
                 
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 space-x-reverse">
+                <div className="flex items-center space-x-2 space-x-reverse">
                     <span className="text-2xl font-bold text-primary font-persian">{item.price}</span>
-                    <span className="text-sm text-muted-foreground font-persian">تومان</span>
+                    <span className="text-sm text-muted-foreground font-persian">افغانی</span>
                   </div>
                   
                   <Button variant="food" size="sm" className="font-persian">
