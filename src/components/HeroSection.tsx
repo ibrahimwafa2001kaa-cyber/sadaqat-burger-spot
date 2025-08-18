@@ -31,6 +31,9 @@ const HeroSection = () => {
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up font-persian leading-tight">
             صداقت برگر
+            <span className="block text-lg md:text-xl lg:text-2xl text-white/80 font-light mt-2">
+              تاسیس ۲۰۱۶
+            </span>
           </h1>
           
           {/* Subtitle */}
@@ -48,8 +51,8 @@ const HeroSection = () => {
               مشاهده منو
               <ArrowLeft className="w-5 h-5 mr-2" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-black font-persian">
-              سفارش تلفنی: +93789963664
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-black font-persian" asChild>
+              <a href="tel:+93789963664">سفارش تلفنی: +93789963664</a>
             </Button>
           </div>
 

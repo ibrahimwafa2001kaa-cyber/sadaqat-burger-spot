@@ -7,6 +7,8 @@ import {
   Clock,
   Heart
 } from "lucide-react";
+import managerPhoto from "@/assets/manager-photo.png";
+import sedaghatLogo from "@/assets/sedaghat-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -31,9 +33,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2 space-x-reverse">
-              <div className="w-12 h-12 bg-gradient-hero rounded-full flex items-center justify-center shadow-glow">
-                <span className="text-2xl font-bold text-white">ص</span>
+            <div className="flex items-center space-x-3 space-x-reverse">
+              <div className="w-12 h-12 rounded-full overflow-hidden shadow-glow">
+                <img 
+                  src={sedaghatLogo} 
+                  alt="صداقت برگر لوگو" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-2xl font-bold font-persian">صداقت برگر</h3>
@@ -42,9 +48,24 @@ const Footer = () => {
             </div>
             
             <p className="text-warm-cream/90 font-persian leading-relaxed">
-              رستوران صداقت برگر تحت مدیریت قاری صاحب صفی الله محمدی با همکاری MJ Ibrahim، 
+              صداقت برگر تحت مدیریت قاری صاحب صفی الله محمدی، 
               برای خود و خانواده تان بهترین غذا را ارائه می‌دهد.
             </p>
+            
+            {/* Manager Photo */}
+            <div className="flex items-center space-x-3 space-x-reverse mt-4">
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-warm-gold">
+                <img 
+                  src={managerPhoto} 
+                  alt="قاری صاحب صفی الله محمدی - مدیر صداقت برگر" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-warm-gold font-bold font-persian">قاری صاحب صفی الله محمدی</p>
+                <p className="text-warm-cream/80 text-sm font-persian">مدیر عامل</p>
+              </div>
+            </div>
 
             <div className="flex items-center space-x-4 space-x-reverse">
               <Badge className="bg-warm-gold text-warm-wood font-persian">
@@ -88,26 +109,26 @@ const Footer = () => {
             <h4 className="text-xl font-bold font-persian text-warm-gold">اطلاعات تماس</h4>
             
             <div className="space-y-4">
-              <div className="flex items-start space-x-3 space-x-reverse">
-                <Phone className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0" />
+              <a href="tel:+93789963664" className="flex items-start space-x-3 space-x-reverse hover:text-warm-gold transition-smooth group">
+                <Phone className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0 group-hover:scale-110 transition-smooth" />
                 <div>
-                  <p className="text-warm-cream/90 font-persian">+93789963664</p>
+                  <p className="text-warm-cream/90 font-persian group-hover:text-warm-gold transition-smooth">+93789963664</p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex items-start space-x-3 space-x-reverse">
-                <MapPin className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0" />
+              <a href="https://maps.app.goo.gl/RYrz56uhyhrVX4NdA" target="_blank" rel="noopener noreferrer" className="flex items-start space-x-3 space-x-reverse hover:text-warm-gold transition-smooth group">
+                <MapPin className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0 group-hover:scale-110 transition-smooth" />
                 <div>
-                  <p className="text-warm-cream/90 font-persian">افغانستان، پروان، شهر چاریکار</p>
-                  <p className="text-warm-cream/90 font-persian">جنب گذر اکرم خان مقابل شیریخ پزی حاجی جان آغا</p>
+                  <p className="text-warm-cream/90 font-persian group-hover:text-warm-gold transition-smooth">افغانستان، پروان، شهر چاریکار</p>
+                  <p className="text-warm-cream/90 font-persian group-hover:text-warm-gold transition-smooth">جنب گذر اکرم خان مقابل شیریخ پزی حاجی جان آغا</p>
                 </div>
-              </div>
+              </a>
               
               <div className="flex items-start space-x-3 space-x-reverse">
                 <Clock className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-warm-cream/90 font-persian">شنبه تا پنج‌شنبه: ۱۰-۲۴</p>
-                  <p className="text-warm-cream/90 font-persian">جمعه‌ها: ۱۲-۲۴</p>
+                  <p className="text-warm-cream/90 font-persian">شنبه تا پنج‌شنبه: ۶ صبح - ۸ شب</p>
+                  <p className="text-warm-cream/90 font-persian">جمعه‌ها: ۵:۳۰ صبح - ۷:۴۵ شب</p>
                 </div>
               </div>
             </div>
@@ -138,7 +159,7 @@ const Footer = () => {
         <div className="border-t border-warm-cream/20 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-warm-cream/70 text-center md:text-left font-persian">
-              © {currentYear} رستوران صداقت برگر. تمامی حقوق محفوظ است.
+              © {currentYear} صداقت برگر. تمامی حقوق محفوظ است.
             </p>
             
             <div className="flex items-center space-x-6 space-x-reverse">

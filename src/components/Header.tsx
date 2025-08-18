@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import sedaghatLogo from "@/assets/sedaghat-logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +19,13 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2 space-x-reverse">
-            <div className="w-12 h-12 bg-gradient-hero rounded-full flex items-center justify-center shadow-glow">
-              <span className="text-2xl font-bold text-white">ص</span>
+          <div className="flex items-center space-x-3 space-x-reverse">
+            <div className="w-12 h-12 rounded-full overflow-hidden shadow-glow">
+              <img 
+                src={sedaghatLogo} 
+                alt="صداقت برگر لوگو" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h1 className="text-2xl font-bold font-persian text-primary">صداقت برگر</h1>
@@ -43,10 +48,10 @@ const Header = () => {
 
           {/* Contact Info */}
           <div className="hidden lg:flex items-center space-x-4 space-x-reverse">
-            <div className="flex items-center space-x-2 space-x-reverse text-sm text-muted-foreground">
+            <a href="tel:+93789963664" className="flex items-center space-x-2 space-x-reverse text-sm text-muted-foreground hover:text-primary transition-smooth">
               <Phone className="w-4 h-4" />
-              <span className="font-persian">۰۲۱-۱۲۳۴۵۶۷۸</span>
-            </div>
+              <span className="font-persian">+93789963664</span>
+            </a>
             <Button variant="warm" size="sm" className="font-persian">
               سفارش آنلاین
             </Button>
@@ -84,10 +89,10 @@ const Header = () => {
                 </nav>
 
                 <div className="flex flex-col space-y-4 pt-4 border-t border-border">
-                  <div className="flex items-center space-x-2 space-x-reverse text-muted-foreground">
+                  <a href="tel:+93789963664" className="flex items-center space-x-2 space-x-reverse text-muted-foreground">
                     <Phone className="w-4 h-4" />
-                    <span className="font-persian">۰۲۱-۱۲۳۴۵۶۷۸</span>
-                  </div>
+                    <span className="font-persian">+93789963664</span>
+                  </a>
                   <Button variant="warm" className="font-persian">
                     سفارش آنلاین
                   </Button>

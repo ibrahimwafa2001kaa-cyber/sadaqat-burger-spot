@@ -13,7 +13,7 @@ const AboutSection = () => {
     },
     {
       icon: Award,
-      number: "۵+",
+      number: "۱۰+",
       label: "سال تجربه"
     },
     {
@@ -23,7 +23,7 @@ const AboutSection = () => {
     },
     {
       icon: Clock,
-      number: "۱۵",
+      number: "۱۰",
       label: "دقیقه آماده‌سازی"
     }
   ];
@@ -57,12 +57,12 @@ const AboutSection = () => {
             </Badge>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-persian text-primary">
-              رستوران صداقت برگر
+              صداقت برگر
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 font-persian leading-relaxed">
-              رستوران صداقت برگر تحت مدیریت قاری صاحب صفی الله محمدی با همکاری MJ Ibrahim، 
-              با هدف ارائه بهترین برگرها و غذاهای سالم برای خانواده‌ها شروع به کار کرد.
+              صداقت برگر تحت مدیریت قاری صاحب صفی الله محمدی، 
+              با هدف ارائه بهترین برگرها و غذاهای سالم برای خانواده‌ها در سال ۲۰۱۶ شروع به کار کرد.
             </p>
             
             <p className="text-lg text-muted-foreground mb-8 font-persian leading-relaxed">

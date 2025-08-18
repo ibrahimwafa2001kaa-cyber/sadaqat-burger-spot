@@ -30,7 +30,7 @@ const ContactSection = () => {
     {
       icon: Clock,
       title: "ساعات کاری",
-      details: ["شنبه تا پنج‌شنبه: ۱۰:۰۰ - ۲۴:۰۰", "جمعه‌ها: ۱۲:۰۰ - ۲۴:۰۰"],
+      details: ["شنبه تا پنج‌شنبه: ۶ صبح - ۸ شب", "جمعه‌ها: ۵:۳۰ صبح - ۷:۴۵ شب"],
       color: "warm-gold"
     }
   ];
@@ -40,12 +40,14 @@ const ContactSection = () => {
       icon: Instagram,
       name: "فیس بوک",
       handle: "facebook.com/share/19cPtVJQrg/",
+      url: "https://www.facebook.com/share/19cPtVJQrg/",
       color: "bg-blue-500"
     },
     {
       icon: MessageCircle,
       name: "گوگل مپ",
       handle: "maps.app.goo.gl/RYrz56uhyhrVX4NdA",
+      url: "https://maps.app.goo.gl/RYrz56uhyhrVX4NdA",
       color: "bg-green-500"
     }
   ];
@@ -59,7 +61,7 @@ const ContactSection = () => {
             تماس با ما
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-persian text-white">
-            ارتباط با رستوران صداقت
+            ارتباط با صداقت برگر
           </h2>
           <p className="text-xl text-white/90 font-persian max-w-2xl mx-auto">
             برای سفارش، رزرو میز یا هر سوال دیگری با ما در ارتباط باشید
@@ -101,28 +103,32 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {socialLinks.map((social, index) => (
-                  <div key={index} className="flex items-center space-x-4 space-x-reverse">
-                    <div className={`${social.color} p-2 rounded-full`}>
+                  <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 space-x-reverse hover:bg-muted/50 p-2 rounded-lg transition-smooth group">
+                    <div className={`${social.color} p-2 rounded-full group-hover:scale-110 transition-smooth`}>
                       <social.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-medium font-persian text-card-foreground">{social.name}</h4>
+                      <h4 className="font-medium font-persian text-card-foreground group-hover:text-primary transition-smooth">{social.name}</h4>
                       <p className="text-muted-foreground font-persian">{social.handle}</p>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </CardContent>
             </Card>
 
             {/* Quick Actions */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Button variant="outline" size="lg" className="bg-white text-warm-wood hover:bg-warm-gold hover:text-white font-persian">
-                <Navigation className="w-5 h-5 ml-2" />
-                مسیریابی
+              <Button variant="outline" size="lg" className="bg-white text-warm-wood hover:bg-warm-gold hover:text-white font-persian" asChild>
+                <a href="https://maps.app.goo.gl/RYrz56uhyhrVX4NdA" target="_blank" rel="noopener noreferrer">
+                  <Navigation className="w-5 h-5 ml-2" />
+                  مسیریابی
+                </a>
               </Button>
-              <Button variant="food" size="lg" className="font-persian">
-                <Phone className="w-5 h-5 ml-2" />
-                تماس فوری
+              <Button variant="food" size="lg" className="font-persian" asChild>
+                <a href="tel:+93789963664">
+                  <Phone className="w-5 h-5 ml-2" />
+                  تماس فوری
+                </a>
               </Button>
             </div>
           </div>
