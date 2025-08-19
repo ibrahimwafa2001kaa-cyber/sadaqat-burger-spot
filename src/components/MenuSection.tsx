@@ -5,9 +5,10 @@ import { Star, Plus, Flame, Leaf } from "lucide-react";
 import frenchFries from "@/assets/french-fries.jpg";
 import afghanBreakfast from "@/assets/afghan-breakfast.jpg";
 import afghanDrinks from "@/assets/afghan-drinks.jpg";
-import smallBurger from "@/assets/small-burger.jpg";
-import mediumBurger from "@/assets/medium-burger.jpg";
-import largeBurger from "@/assets/large-burger.jpg";
+import beefBurger from "@/assets/beef-burger.jpg";
+import chickenBurger from "@/assets/chicken-burger.jpg";
+import veggieBurger from "@/assets/veggie-burger.jpg";
+import heroBurger from "@/assets/hero-burger.jpg";
 
 const MenuSection = () => {
   const menuItems = [
@@ -17,7 +18,7 @@ const MenuSection = () => {
       name: "برگر کوچک",
       description: "برگر ساده با نان و پتی",
       price: "۱۰",
-      image: smallBurger,
+      image: beefBurger,
       rating: 4.5,
       isPopular: false,
       isSpicy: false,
@@ -28,7 +29,7 @@ const MenuSection = () => {
       name: "برگر ساده",
       description: "برگر با سبزیجات اساسی",
       price: "۲۰",
-      image: smallBurger,
+      image: chickenBurger,
       rating: 4.6,
       isPopular: false,
       isSpicy: false,
@@ -39,7 +40,7 @@ const MenuSection = () => {
       name: "برگر متوسط",
       description: "برگر با پنیر و سبزیجات کامل",
       price: "۳۰",
-      image: mediumBurger,
+      image: veggieBurger,
       rating: 4.8,
       isPopular: true,
       isSpicy: false,
@@ -50,7 +51,7 @@ const MenuSection = () => {
       name: "برگر بزرگ",
       description: "برگر بزرگ با تمام مواد اولیه",
       price: "۵۰",
-      image: largeBurger,
+      image: heroBurger,
       rating: 4.9,
       isPopular: true,
       isSpicy: false,
@@ -61,7 +62,7 @@ const MenuSection = () => {
       name: "برگر دوبل",
       description: "دو عدد پتی با پنیر و سبزیجات",
       price: "۷۰",
-      image: largeBurger,
+      image: frenchFries,
       rating: 4.9,
       isPopular: true,
       isSpicy: false,
