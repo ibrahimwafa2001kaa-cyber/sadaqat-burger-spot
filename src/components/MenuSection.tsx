@@ -15,7 +15,7 @@ const MenuSection = () => {
     {
       id: 1,
       name: "برگر کوچک",
-      description: "برگر ساده با نان و گوشت",
+      description: "برگر ساده با نان و پتی",
       price: "۱۰",
       image: smallBurger,
       rating: 4.5,
@@ -59,7 +59,7 @@ const MenuSection = () => {
     {
       id: 5,
       name: "برگر دوبل",
-      description: "دو عدد گوشت با پنیر و سبزیجات",
+      description: "دو عدد پتی با پنیر و سبزیجات",
       price: "۷۰",
       image: largeBurger,
       rating: 4.9,

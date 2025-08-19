@@ -1,7 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import { 
-  Instagram, 
-  MessageCircle, 
   Phone, 
   MapPin,
   Clock,
@@ -9,6 +7,8 @@ import {
 } from "lucide-react";
 import managerPhoto from "@/assets/manager-photo.png";
 import sedaghatLogo from "@/assets/sedaghat-logo.png";
+import facebookLogo from "@/assets/facebook-logo.png";
+import mapsLogo from "@/assets/maps-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -141,7 +141,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="bg-blue-500 p-2 rounded-full hover:bg-blue-600 transition-smooth"
               >
-                <Instagram className="w-5 h-5" />
+                <img src={facebookLogo} alt="Facebook" className="w-5 h-5" />
               </a>
               <a
                 href="https://maps.app.goo.gl/RYrz56uhyhrVX4NdA"
@@ -149,7 +149,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="bg-green-500 p-2 rounded-full hover:bg-green-600 transition-smooth"
               >
-                <MessageCircle className="w-5 h-5" />
+                <img src={mapsLogo} alt="Google Maps" className="w-5 h-5" />
               </a>
             </div>
           </div>
