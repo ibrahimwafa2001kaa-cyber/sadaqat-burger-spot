@@ -245,7 +245,11 @@ const MenuSection = () => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-smooth"
+                  className={`w-full object-cover group-hover:scale-110 transition-smooth ${
+                    item.category === "نوشیدنی" || item.category === "پیش غذا" 
+                      ? "h-48" 
+                      : "h-64"
+                  }`}
                 />
                 {item.isPopular && (
                   <Badge className="absolute top-4 right-4 bg-warm-gold text-warm-wood font-persian">
