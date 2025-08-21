@@ -9,6 +9,7 @@ import managerPhoto from "@/assets/manager-photo.png";
 import sedaghatLogo from "@/assets/sedaghat-logo.png";
 import facebookLogo from "@/assets/facebook-logo.png";
 import mapsLogo from "@/assets/maps-logo.png";
+import whatsappLogo from "@/assets/whatsapp-logo.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -136,6 +137,14 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-4 space-x-reverse">
               <a
+                href="https://wa.me/93789963664"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 p-2 rounded-full hover:bg-green-600 transition-smooth"
+              >
+                <img src={whatsappLogo} alt="WhatsApp" className="w-5 h-5" />
+              </a>
+              <a
                 href="https://www.facebook.com/share/19cPtVJQrg/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -147,7 +156,7 @@ const Footer = () => {
                 href="https://maps.app.goo.gl/RYrz56uhyhrVX4NdA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 p-2 rounded-full hover:bg-green-600 transition-smooth"
+                className="bg-gray-500 p-2 rounded-full hover:bg-gray-600 transition-smooth"
               >
                 <img src={mapsLogo} alt="Google Maps" className="w-5 h-5" />
               </a>
