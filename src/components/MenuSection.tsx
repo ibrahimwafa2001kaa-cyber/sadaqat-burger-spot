@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Plus, Flame, Leaf } from "lucide-react";
 import frenchFries from "@/assets/french-fries.jpg";
 import afghanBreakfast from "@/assets/afghan-breakfast.jpg";
+import teaWithBread from "@/assets/tea-with-bread.jpg";
 import afghanDrinks from "@/assets/afghan-drinks.jpg";
 import beefBurger from "@/assets/beef-burger.jpg";
 import chickenBurger from "@/assets/chicken-burger.jpg";
@@ -128,7 +129,7 @@ const MenuSection = () => {
       id: 11,
       name: "آب معدنی کوچک",
       description: "بطری آب معدنی کوچک",
-      price: "۲",
+      price: "۱۰",
       image: afghanDrinks,
       rating: 4.0,
       isPopular: false,
@@ -139,7 +140,7 @@ const MenuSection = () => {
       id: 12,
       name: "آب معدنی بزرگ",
       description: "بطری آب معدنی بزرگ",
-      price: "۴",
+      price: "۲۰",
       image: afghanDrinks,
       rating: 4.0,
       isPopular: false,
@@ -173,7 +174,7 @@ const MenuSection = () => {
       id: 13,
       name: "تخم مرغ جوشانده",
       description: "تخم مرغ تازه آب پز با نان",
-      price: "۸",
+      price: "۱۰",
       image: afghanBreakfast,
       rating: 4.6,
       isPopular: false,
@@ -184,7 +185,7 @@ const MenuSection = () => {
       id: 14,
       name: "املت",
       description: "املت تازه با سبزیجات",
-      price: "۱۲",
+      price: "۳۰",
       image: afghanBreakfast,
       rating: 4.7,
       isPopular: true,
@@ -195,7 +196,7 @@ const MenuSection = () => {
       id: 15,
       name: "کرایی",
       description: "تخم مرغ سرخ شده با طعم محلی",
-      price: "۱۰",
+      price: "۵۰",
       image: afghanBreakfast,
       rating: 4.5,
       isPopular: false,
@@ -206,8 +207,8 @@ const MenuSection = () => {
       id: 16,
       name: "چای سبز با نان داغ",
       description: "چای سبز تازه دم با نان گرم",
-      price: "۵",
-      image: afghanBreakfast,
+      price: "۲۰",
+      image: teaWithBread,
       rating: 4.8,
       isPopular: true,
       isSpicy: false,
@@ -216,9 +217,9 @@ const MenuSection = () => {
     // سیب زمینی
     {
       id: 17,
-      name: "سیب زمینی سرخ کرده",
-      description: "سیب زمینی طلایی و کریسپی",
-      price: "۱۰",
+      name: "چپس با نان داغ",
+      description: "چپس طلایی و کریسپی با نان تازه",
+      price: "۳۰",
       image: frenchFries,
       rating: 4.7,
       isPopular: true,
