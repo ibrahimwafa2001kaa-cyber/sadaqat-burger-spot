@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Plus, Flame, Leaf } from "lucide-react";
+import { Star, Plus, Flame, Leaf, Download } from "lucide-react";
+import LazyImage from "@/components/LazyImage";
 import frenchFries from "@/assets/french-fries.jpg";
 import afghanBreakfast from "@/assets/afghan-breakfast.jpg";
 import teaWithBread from "@/assets/tea-with-bread.jpg";
@@ -228,17 +229,49 @@ const MenuSection = () => {
     }
   ];
 
+  const downloadMenu = () => {
+    // Create a structured menu for download
+    const menuText = menuItems.map(item => 
+      `${item.name} - ${item.price} افغانی\n${item.description}\n`
+    ).join('\n');
+    
+    const blob = new Blob([menuText], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'menu-sedaghat-burger.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
-    <section id="menu" className="py-20 bg-secondary/30">
+    <section id="menu" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
+          <Badge className="bg-primary text-primary-foreground mb-6 font-persian">
+            منوی غذا
+          </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-persian text-primary">
-            منو صداقت برگر
+            منوی صداقت برگر
           </h2>
           <p className="text-xl text-muted-foreground font-persian max-w-2xl mx-auto">
-            انتخاب کنید از میان بهترین برگرهای شهر، هر کدام با طعم منحصر به فرد
+            طعم اصیل و کیفیت برتر در هر لقمه
           </p>
+          
+          {/* Download Menu Button */}
+          <div className="mt-8">
+            <Button 
+              variant="outline" 
+              onClick={downloadMenu}
+              className="font-persian border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              <Download className="w-4 h-4 ml-2" />
+              دانلود منو
+            </Button>
+          </div>
         </div>
 
         {/* Menu Categories */}
@@ -265,14 +298,17 @@ const MenuSection = () => {
           {menuItems.map((item) => (
             <Card key={item.id} className="group hover:shadow-warm transition-smooth border-0 shadow-card bg-card overflow-hidden">
               <div className="relative">
-                <img
+                <LazyImage
                   src={item.image}
-                  alt={item.name}
+                  alt={`${item.name} - رستوران صداقت برگر`}
                   className={`w-full object-cover group-hover:scale-110 transition-smooth ${
                     item.category === "نوشیدنی" || item.category === "پیش غذا" 
                       ? "h-48" 
                       : "h-64"
                   }`}
+                  width={400}
+                  height={item.category === "نوشیدنی" || item.category === "پیش غذا" ? 200 : 260}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 {item.isPopular && (
                   <Badge className="absolute top-4 right-4 bg-warm-gold text-warm-wood font-persian">

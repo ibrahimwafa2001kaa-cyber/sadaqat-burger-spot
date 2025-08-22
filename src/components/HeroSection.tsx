@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Star } from "lucide-react";
+import LazyImage from "@/components/LazyImage";
 import heroBurger from "@/assets/hero-burger.jpg";
 
 const HeroSection = () => {
@@ -7,10 +8,13 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <LazyImage
           src={heroBurger}
-          alt="صداقت برگر - برگر لذیذ"
+          alt="صداقت برگر - بهترین برگر چاریکار پروان - طعم اصیل و کیفیت برتر"
           className="w-full h-full object-cover"
+          priority={true}
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
       </div>

@@ -103,7 +103,8 @@ export default {
 				'float': 'float 3s ease-in-out infinite'
 			},
 			fontFamily: {
-				'persian': ['Zarringar', 'Vazirmatn', 'Inter', 'system-ui', 'sans-serif']
+				'persian': ['Zarringar', 'Vazirmatn', 'Inter', 'system-ui', 'sans-serif'],
+				'heading': ['Zarringar', 'Vazirmatn', 'Inter', 'system-ui', 'sans-serif']
 			},
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',

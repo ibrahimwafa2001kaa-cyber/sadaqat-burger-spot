@@ -103,7 +103,7 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 {socialLinks.map((social, index) => (
-                  <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 space-x-reverse hover:bg-muted/50 p-2 rounded-lg transition-smooth group">
+                  <a key={index} href={social.url} target="_blank" rel="noopener noreferrer nofollow" className="flex items-center space-x-4 space-x-reverse hover:bg-muted/50 p-2 rounded-lg transition-smooth group" aria-label={`مراجعه به ${social.name} صداقت برگر`}>
                     <div className={`${social.color} p-2 rounded-full group-hover:scale-110 transition-smooth`}>
                       <social.icon className="w-5 h-5 text-white" />
                     </div>
@@ -118,14 +118,14 @@ const ContactSection = () => {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Button variant="outline" size="lg" className="bg-white text-warm-wood hover:bg-warm-gold hover:text-white font-persian" asChild>
-                <a href="https://maps.app.goo.gl/RYrz56uhyhrVX4NdA" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="bg-white text-warm-wood hover:bg-warm-gold hover:text-white font-persian min-h-[44px]" asChild>
+                <a href="https://maps.app.goo.gl/RYrz56uhyhrVX4NdA" target="_blank" rel="noopener noreferrer nofollow" aria-label="مسیریابی به رستوران صداقت برگر">
                   <Navigation className="w-5 h-5 ml-2" />
                   مسیریابی
                 </a>
               </Button>
-              <Button variant="food" size="lg" className="font-persian" asChild>
-                <a href="tel:+93789963664">
+              <Button variant="food" size="lg" className="font-persian min-h-[44px]" asChild>
+                <a href="tel:+93789963664" aria-label="تماس فوری با رستوران صداقت برگر">
                   <Phone className="w-5 h-5 ml-2" />
                   تماس فوری
                 </a>

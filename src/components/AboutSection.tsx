@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Award, Clock } from "lucide-react";
+import LazyImage from "@/components/LazyImage";
 import restaurantInterior from "@/assets/restaurant-interior.jpg";
 
 const AboutSection = () => {
@@ -91,10 +92,13 @@ const AboutSection = () => {
           {/* Image */}
           <div className="order-1 lg:order-2 relative">
             <div className="relative overflow-hidden rounded-2xl shadow-warm">
-              <img
+              <LazyImage
                 src={restaurantInterior}
-                alt="فضای داخلی رستوران صداقت برگر"
+                alt="فضای داخلی رستوران صداقت برگر - محیطی گرم و دوستانه برای خانواده"
                 className="w-full h-[500px] object-cover"
+                width={800}
+                height={500}
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>

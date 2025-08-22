@@ -1,0 +1,29 @@
+{
+  "name": "صداقت برگر - رستوران چاریکار پروان",
+  "short_name": "صداقت برگر",
+  "description": "بهترین برگرها و غذاهای افغانی در چاریکار پروان",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fef7ed",
+  "theme_color": "#ea580c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "fa",
+  "dir": "rtl",
+  "categories": ["food", "restaurant", "business"],
+  "screenshots": [
+    {
+      "src": "/assets/hero-burger.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
+}

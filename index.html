@@ -1,24 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zarringar:wght@400;700&display=swap" rel="stylesheet">
-    <title>صداقت برگر - بهترین برگر شهر | رستوران صداقت</title>
-    <meta name="description" content="رستوران صداقت برگر - طعم اصیل، کیفیت برتر. بهترین برگرهای شهر با مواد اولیه تازه و دستور پخت منحصر به فرد. سفارش آنلاین و تحویل سریع." />
+    
+    <!-- SEO Meta Tags -->
+    <title>صداقت برگر - بهترین برگر چاریکار پروان | رستوران صداقت</title>
+    <meta name="description" content="رستوران صداقت برگر در چاریکار پروان - طعم اصیل، کیفیت برتر. بهترین برگرها و غذاهای افغانی با مواد اولیه تازه. سفارش: +93789963664" />
     <meta name="author" content="رستوران صداقت برگر" />
-    <meta name="keywords" content="صداقت برگر، رستوران برگر، برگر تهران، فست فود، برگر خوشمزه، سفارش آنلاین برگر" />
-
-    <meta property="og:title" content="صداقت برگر - بهترین برگر شهر" />
-    <meta property="og:description" content="رستوران صداقت برگر - طعم اصیل، کیفیت برتر. بهترین برگرهای شهر با مواد اولیه تازه و دستور پخت منحصر به فرد." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
+    <meta name="keywords" content="صداقت برگر، رستوران چاریکار، برگر پروان، فست فود افغانستان، برگر خوشمزه، غذای حلال، کرایی، املت" />
+    <link rel="canonical" href="https://93ceffaf-1347-4fee-91c1-b2b2218bf987.lovableproject.com" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="صداقت برگر - بهترین برگر چاریکار پروان" />
+    <meta property="og:description" content="رستوران صداقت برگر - طعم اصیل، کیفیت برتر. بهترین برگرها با مواد اولیه تازه روزانه. تاسیس 2016 تحت مدیریت قاری صاحب صفی الله محمدی." />
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:image" content="https://93ceffaf-1347-4fee-91c1-b2b2218bf987.lovableproject.com/assets/hero-burger.jpg" />
+    <meta property="og:url" content="https://93ceffaf-1347-4fee-91c1-b2b2218bf987.lovableproject.com" />
+    <meta property="og:site_name" content="صداقت برگر" />
+    <meta property="og:locale" content="fa_AF" />
+    
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:title" content="صداقت برگر - بهترین برگر چاریکار پروان" />
+    <meta name="twitter:description" content="رستوران صداقت برگر - طعم اصیل، کیفیت برتر. سفارش: +93789963664" />
+    <meta name="twitter:image" content="https://93ceffaf-1347-4fee-91c1-b2b2218bf987.lovableproject.com/assets/hero-burger.jpg" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#ea580c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "صداقت برگر",
+      "image": "https://93ceffaf-1347-4fee-91c1-b2b2218bf987.lovableproject.com/assets/hero-burger.jpg",
+      "telephone": "+93789963664",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "جنب گذر اکرم خان مقابل شیریخ پزی حاجی جان آغا",
+        "addressLocality": "چاریکار",
+        "addressRegion": "پروان",
+        "addressCountry": "AF"
+      },
+      "openingHours": [
+        "Mo-Th 06:00-20:00",
+        "Fr 05:30-19:45",
+        "Sa 06:00-20:00"
+      ],
+      "servesCuisine": "Fast Food",
+      "priceRange": "$$",
+      "founder": "قاری صاحب صفی الله محمدی",
+      "foundingDate": "2016",
+      "url": "https://93ceffaf-1347-4fee-91c1-b2b2218bf987.lovableproject.com"
+    }
+    </script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </head>
 
   <body>
