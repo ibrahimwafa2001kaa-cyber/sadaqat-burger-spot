@@ -103,27 +103,6 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Trust Badges */}
-        <div className="bg-muted/30 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-center mb-8 font-persian text-primary">
-            چرا صداقت برگر؟
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {trustBadges.map((badge, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary rounded-full"></div>
-                </div>
-                <h4 className="font-bold font-persian text-card-foreground mb-2">
-                  {badge.title}
-                </h4>
-                <p className="text-sm text-muted-foreground font-persian">
-                  {badge.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

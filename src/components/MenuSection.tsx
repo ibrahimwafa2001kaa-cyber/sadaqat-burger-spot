@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/components/CartContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Plus, Flame, Leaf, Download } from "lucide-react";
@@ -13,6 +14,7 @@ import veggieBurger from "@/assets/veggie-burger.jpg";
 import heroBurger from "@/assets/hero-burger.jpg";
 
 const MenuSection = () => {
+  const { addItem } = useCart();
   const menuItems = [
     // برگرها
     {
@@ -303,11 +305,11 @@ const MenuSection = () => {
                   alt={`${item.name} - رستوران صداقت برگر`}
                   className={`w-full object-cover group-hover:scale-110 transition-smooth ${
                     item.category === "نوشیدنی" || item.category === "پیش غذا" 
-                      ? "h-48" 
-                      : "h-64"
+                      ? "h-32" 
+                      : "h-42"
                   }`}
                   width={400}
-                  height={item.category === "نوشیدنی" || item.category === "پیش غذا" ? 200 : 260}
+                  height={item.category === "نوشیدنی" || item.category === "پیش غذا" ? 130 : 170}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 {item.isPopular && (
@@ -346,7 +348,18 @@ const MenuSection = () => {
                     <span className="text-sm text-muted-foreground font-persian">افغانی</span>
                   </div>
                   
-                  <Button variant="food" size="sm" className="font-persian">
+                  <Button 
+                    variant="food" 
+                    size="sm" 
+                    className="font-persian"
+                    onClick={() => addItem({
+                      id: item.id,
+                      name: item.name,
+                      price: item.price,
+                      image: item.image,
+                      category: item.category
+                    })}
+                  >
                     <Plus className="w-4 h-4 ml-2" />
                     افزودن
                   </Button>

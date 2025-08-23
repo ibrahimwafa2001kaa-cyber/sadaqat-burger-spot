@@ -72,7 +72,7 @@ const GoogleMaps = () => {
                   className="w-full font-persian"
                 >
                   <Navigation className="w-5 h-5 ml-2" />
-                  مسیریابی با گوگل مپ
+                  مسیریابی با نقشه گوگل
                 </Button>
               </CardContent>
             </Card>

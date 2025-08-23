@@ -45,7 +45,7 @@ const ContactSection = () => {
     },
     {
       icon: MessageCircle,
-      name: "گوگل مپ",
+      name: "نقشه گوگل",
       handle: "maps.app.goo.gl/RYrz56uhyhrVX4NdA",
       url: "https://maps.app.goo.gl/RYrz56uhyhrVX4NdA",
       color: "bg-green-500"
