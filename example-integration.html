@@ -1,0 +1,30 @@
+<!--
+راهنما:
+1) فایل‌های JSON را در public/locales/dari.json و public/locales/pashto.json قرار دهید.
+2) اسکریپت‌ها را قبل از بسته شدن تگ </body> بارگذاری کنید.
+3) در المان‌هایی که نیاز به ترجمه دارند از صفت data-i18n استفاده کنید.
+-->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title data-i18n="title">صداقت برگر</title>
+  </head>
+  <body>
+    <main id="sadaqat-burger">
+      <h1 data-i18n="welcome">خوش آمدید به صداقت برگر</h1>
+      <nav>
+        <button data-i18n="menu">منو</button>
+        <button data-i18n="order">سفارش دهید</button>
+      </nav>
+    </main>
+
+    <script src="/src/js/i18n.js"></script>
+    <script src="/src/components/language-selector.js"></script>
+    <script>
+      SadaqatLanguageSelector.showWhenOnPage({
+        selector: '#sadaqat-burger' // یا urlContains: 'sadaqat'
+      });
+    </script>
+  </body>
+</html>
