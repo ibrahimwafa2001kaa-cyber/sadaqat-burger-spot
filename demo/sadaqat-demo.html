@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title data-i18n="title">صداقت برگر</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg,#0f172a 0%, #071029 50%, #001219 100%);
+        color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        padding: 24px;
+      }
+      .card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        padding: 28px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 760px;
+        box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+      }
+      header h1 {
+        margin: 0 0 10px 0;
+        font-size: 24px;
+      }
+      nav { display:flex; gap:12px; margin-top:16px; }
+      nav button {
+        padding:10px 14px;
+        border-radius:8px;
+        border:1px solid rgba(255,255,255,0.06);
+        background: rgba(255,255,255,0.02);
+        color: inherit;
+        cursor:pointer;
+      }
+      .meta { margin-top:18px; opacity:0.8; font-size:13px; }
+      .hint { margin-top:10px; opacity:0.85; font-size:13px; }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="demo-root">
+      <header>
+        <h1 data-i18n="welcome">خوش آمدید به صداقت برگر</h1>
+        <p class="hint" data-i18n="choose_language">زبان را انتخاب کنید</p>
+      </header>
+
+      <main>
+        <nav>
+          <button data-i18n="menu">منو</button>
+          <button data-i18n="order">سفارش دهید</button>
+        </nav>
+
+        <section class="meta" aria-live="polite">
+          <div><strong>Branch:</strong> feature/i18n-dari-pashto</div>
+          <div><strong>Files added:</strong> public/locales/dari.json, public/locales/pashto.json, src/js/i18n.js, src/components/language-selector.js</div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // Embedded locales so the demo works without a server/fetch
+      const DEMO_LOCALES = {
+        "dari": {
+          "title": "صداقت برگر",
+          "welcome": "خوش آمدید به صداقت برگر",
+          "order": "سفارش دهید",
+          "menu": "منو",
+          "choose_language": "زبان را انتخاب کنید",
+          "dari": "دری",
+          "pashto": "پشتو"
+        },
+        "pashto": {
+          "title": "صداقت برګر",
+          "welcome": "صداقت برګر ته ښه راغلاست",
+          "order": "آرڈر وکړئ",
+          "menu": "مینو",
+          "choose_language": "ژبه وټاکئ",
+          "dari": "دري",
+          "pashto": "پښتو"
+        }
+      };
+    </script>
+
+    <script>
+      // i18n (lightweight) — adapted to read from DEMO_LOCALES
+      (function (global) {
+        const storageKey = 'sadaqat_lang';
+        const defaultLang = 'dari';
+        const state = {
+          lang: localStorage.getItem(storageKey) || defaultLang,
+          messages: {}
+        };
+
+        async function loadMessages(lang) {
+          if (state.messages[lang]) return state.messages[lang];
+          // In demo we read from DEMO_LOCALES
+          const json = (window.DEMO_LOCALES && window.DEMO_LOCALES[lang]) ? window.DEMO_LOCALES[lang] : {};
+          state.messages[lang] = json;
+          return json;
+        }
+
+        async function setLanguage(lang) {
+          state.lang = lang;
+          localStorage.setItem(storageKey, lang);
+          await loadMessages(lang);
+          applyTranslations();
+          global.dispatchEvent(new CustomEvent('sadaqat:languageChanged', {detail: {lang}}));
+        }
+
+        function t(key) {
+          const msgs = state.messages[state.lang] || {};
+          return (msgs && msgs[key]) || key;
+        }
+
+        function applyTranslations(root = document) {
+          const els = root.querySelectorAll('[data-i18n]');
+          els.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const txt = t(key);
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+              el.placeholder = txt;
+            } else {
+              el.textContent = txt;
+            }
+          });
+          // accessibility: set lang and dir on <html>
+          document.documentElement.lang = state.lang === 'dari' ? 'fa-AF' : 'ps-AF';
+          document.documentElement.dir = (state.lang === 'dari' || state.lang === 'pashto') ? 'rtl' : 'ltr';
+        }
+
+        async function init(options = {}) {
+          if (options.defaultLang) state.lang = options.defaultLang;
+          await loadMessages(state.lang);
+          applyTranslations();
+          return {lang: state.lang};
+        }
+
+        global.i18n = { init, setLanguage, t, state, applyTranslations };
+      })(window);
+    </script>
+
+    <script>
+      // language-selector (demo copy)
+      (function (global) {
+        const css = `
+        .sadaqat-lang-bar {
+          position: fixed;
+          right: 18px;
+          bottom: 24px;
+          backdrop-filter: blur(8px) saturate(120%);
+          background: rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 12px;
+          padding: 8px 10px;
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          z-index: 9999;
+          box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+          color: #fff;
+          font-family: sans-serif;
+          transform: translateY(20px);
+          opacity: 0;
+          transition: all 260ms ease;
+        }
+        .sadaqat-lang-bar.show {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        .sadaqat-lang-label {
+          font-size: 13px;
+          margin-right: 6px;
+          opacity: 0.95;
+        }
+        .sadaqat-lang-btn {
+          background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+          border: 1px solid rgba(255,255,255,0.08);
+          color: #fff;
+          padding: 6px 10px;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 13px;
+          transition: transform 140ms ease, background 140ms;
+        }
+        .sadaqat-lang-btn.active {
+          background: rgba(255,255,255,0.16);
+          transform: translateY(-2px);
+        }
+        .sadaqat-lang-close {
+          margin-left: 6px;
+          background: transparent;
+          border: none;
+          color: rgba(255,255,255,0.7);
+          cursor: pointer;
+          font-size: 14px;
+        }
+        @media (prefers-color-scheme: light) {
+          .sadaqat-lang-bar {
+            background: rgba(255,255,255,0.7);
+            color: #111;
+            border-color: rgba(0,0,0,0.06);
+          }
+        }
+        `;
+
+        function injectStyle() {
+          if (document.getElementById('sadaqat-lang-style')) return;
+          const s = document.createElement('style');
+          s.id = 'sadaqat-lang-style';
+          s.innerHTML = css;
+          document.head.appendChild(s);
+        }
+
+        function createBar(options = {}) {
+          injectStyle();
+          const bar = document.createElement('div');
+          bar.className = 'sadaqat-lang-bar';
+          const label = document.createElement('div');
+          label.className = 'sadaqat-lang-label';
+          label.setAttribute('data-i18n', 'choose_language');
+          label.textContent = options.i18n && options.i18n.t ? options.i18n.t('choose_language') : 'Choose language';
+
+          const btnDari = document.createElement('button');
+          btnDari.className = 'sadaqat-lang-btn';
+          btnDari.textContent = options.i18n ? options.i18n.t('dari') : 'Dari';
+          btnDari.dataset.lang = 'dari';
+
+          const btnPashto = document.createElement('button');
+          btnPashto.className = 'sadaqat-lang-btn';
+          btnPashto.textContent = options.i18n ? options.i18n.t('pashto') : 'Pashto';
+          btnPashto.dataset.lang = 'pashto';
+
+          const close = document.createElement('button');
+          close.className = 'sadaqat-lang-close';
+          close.innerHTML = '&times;';
+
+          bar.appendChild(label);
+          bar.appendChild(btnDari);
+          bar.appendChild(btnPashto);
+          bar.appendChild(close);
+
+          function updateActive() {
+            const current = (options.i18n && options.i18n.state && options.i18n.state.lang) || localStorage.getItem('sadaqat_lang') || 'dari';
+            [btnDari, btnPashto].forEach(b => b.classList.toggle('active', b.dataset.lang === current));
+          }
+
+          btnDari.addEventListener('click', async () => {
+            await options.i18n.setLanguage('dari');
+            updateActive();
+          });
+          btnPashto.addEventListener('click', async () => {
+            await options.i18n.setLanguage('pashto');
+            updateActive();
+          });
+          close.addEventListener('click', () => {
+            bar.classList.remove('show');
+            setTimeout(() => bar.remove(), 260);
+          });
+
+          global.addEventListener('sadaqat:languageChanged', () => {
+            if (options.i18n) {
+              label.textContent = options.i18n.t('choose_language');
+              btnDari.textContent = options.i18n.t('dari');
+              btnPashto.textContent = options.i18n.t('pashto');
+            }
+            updateActive();
+          });
+
+          updateActive();
+
+          document.body.appendChild(bar);
+          setTimeout(() => bar.classList.add('show'), 20);
+          return bar;
+        }
+
+        function showWhenOnPage(options = {}) {
+          const i18n = window.i18n;
+          const shouldShow = () => {
+            if (options.selector && document.querySelector(options.selector)) return true;
+            if (options.urlContains && location.pathname.includes(options.urlContains)) return true;
+            if (options.check && typeof options.check === 'function' && options.check()) return true;
+            return false;
+          };
+
+          (async () => {
+            if (!i18n) {
+              console.warn('i18n not found; include i18n before language-selector');
+            } else {
+              await i18n.init();
+            }
+            if (shouldShow()) {
+              createBar({i18n});
+            } else {
+              const observer = new MutationObserver(() => {
+                if (shouldShow() && !document.querySelector('.sadaqat-lang-bar')) {
+                  createBar({i18n});
+                }
+              });
+              observer.observe(document.body, {childList: true, subtree: true});
+              window.addEventListener('popstate', () => {
+                if (shouldShow() && !document.querySelector('.sadaqat-lang-bar')) {
+                  createBar({i18n});
+                }
+              });
+              window.addEventListener('hashchange', () => {
+                if (shouldShow() && !document.querySelector('.sadaqat-lang-bar')) {
+                  createBar({i18n});
+                }
+              });
+            }
+          })();
+        }
+
+        global.SadaqatLanguageSelector = { showWhenOnPage, createBar };
+      })(window);
+    </script>
+
+    <script>
+      // initialize demo
+      (async function () {
+        await i18n.init();
+        // show the language selector when demo-root exists
+        SadaqatLanguageSelector.showWhenOnPage({ selector: '#demo-root' });
+      })();
+    </script>
+  </body>
+</html>
