@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Star, User, Calendar } from "lucide-react";
 import { toast } from "sonner";
+import ImageUpload from "./ImageUpload";
 
 interface Review {
   id: number;
@@ -14,6 +15,7 @@ interface Review {
   rating: number;
   text: string;
   date: string;
+  image?: string;
 }
 
 const ReviewSection = () => {
@@ -23,7 +25,8 @@ const ReviewSection = () => {
     name: "",
     location: "",
     rating: 5,
-    text: ""
+    text: "",
+    image: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -41,7 +44,7 @@ const ReviewSection = () => {
     };
 
     setReviews(prev => [newReview, ...prev]);
-    setFormData({ name: "", location: "", rating: 5, text: "" });
+    setFormData({ name: "", location: "", rating: 5, text: "", image: "" });
     toast.success("نظر شما با موفقیت ثبت شد!");
   };
 
@@ -133,6 +136,11 @@ const ReviewSection = () => {
                     />
                   </div>
                   
+                  <ImageUpload
+                    onImageUpload={(imageUrl) => setFormData(prev => ({ ...prev, image: imageUrl }))}
+                    className="mb-4"
+                  />
+                  
                   <Button type="submit" variant="hero" className="w-full font-persian">
                     ثبت نظر
                   </Button>
@@ -175,9 +183,19 @@ const ReviewSection = () => {
                       </div>
                     </div>
                     
-                    <p className="text-muted-foreground font-persian leading-relaxed">
+                    <p className="text-muted-foreground font-persian leading-relaxed mb-4">
                       "{review.text}"
                     </p>
+                    
+                    {review.image && (
+                      <div className="mt-4">
+                        <img
+                          src={review.image}
+                          alt="تصویر نظر"
+                          className="w-full max-w-sm h-48 object-cover rounded-lg shadow-card"
+                        />
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
