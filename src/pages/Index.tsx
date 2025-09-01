@@ -2,10 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import AboutSection from "@/components/AboutSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import ReviewSection from "@/components/ReviewSection";
 import GoogleMaps from "@/components/GoogleMaps";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -21,10 +18,7 @@ const Index = () => {
         <HeroSection />
         <MenuSection />
         <AboutSection />
-        <TestimonialsSection />
-        <ReviewSection />
         <GoogleMaps />
-        <ContactSection />
       </main>
       <Footer />
     </div>
