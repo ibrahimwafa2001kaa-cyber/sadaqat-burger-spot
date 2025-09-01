@@ -17,32 +17,7 @@ interface Review {
 }
 
 const ReviewSection = () => {
-  const [reviews, setReviews] = useState<Review[]>([
-    {
-      id: 1,
-      name: "احمد رضایی",
-      location: "چاریکار، پروان",
-      rating: 5,
-      text: "واقعاً بهترین برگری که تا حالا خورده‌ام! گوشت تازه و طعم فوق‌العاده. خدمات هم عالی.",
-      date: "۲ هفته پیش"
-    },
-    {
-      id: 2,
-      name: "فاطمه احمدی",
-      location: "کابل",
-      rating: 5,
-      text: "هر بار که به پروان می‌آیم حتماً از صداقت برگر سفارش می‌دهم. کیفیت عالی و قیمت مناسب.",
-      date: "۱ ماه پیش"
-    },
-    {
-      id: 3,
-      name: "محمد علی",
-      location: "چاریکار، پروان", 
-      rating: 5,
-      text: "کرایی و املت‌شان هم خیلی خوشمزه است. مخصوصاً صبحانه‌هایشان عالی. پیشنهاد می‌کنم.",
-      date: "۳ هفته پیش"
-    }
-  ]);
+  const [reviews, setReviews] = useState<Review[]>([]);
 
   const [formData, setFormData] = useState({
     name: "",
