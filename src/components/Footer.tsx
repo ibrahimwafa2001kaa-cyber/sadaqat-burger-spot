@@ -5,8 +5,7 @@ import {
   Clock,
   Heart
 } from "lucide-react";
-import managerPhoto from "@/assets/manager-photo.png";
-import sedaghatLogo from "@/assets/sedaghat-logo.png";
+// Images uploaded by user
 import facebookLogo from "@/assets/facebook-logo.png";
 import mapsLogo from "@/assets/maps-logo.png";
 import whatsappLogo from "@/assets/whatsapp-logo.svg";
@@ -37,8 +36,9 @@ const Footer = () => {
             <div className="flex items-center space-x-3 space-x-reverse">
               <div className="w-12 h-12 rounded-full overflow-hidden shadow-glow">
                 <img 
-                  src={sedaghatLogo} 
+                  src="/lovable-uploads/c8fda55b-40ce-4a40-8af4-d4dc90dcb223.png" 
                   alt="صداقت برگر لوگو" 
+                  style={{maxWidth:"100%", height:"auto"}}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -57,8 +57,9 @@ const Footer = () => {
             <div className="flex items-center space-x-3 space-x-reverse mt-4">
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-warm-gold">
                 <img 
-                  src={managerPhoto} 
+                  src="/lovable-uploads/7eb24bc1-4ce3-4137-a2b7-2a00d59348aa.png" 
                   alt="قاری صاحب صفی الله محمدی - مدیر صداقت برگر" 
+                  style={{maxWidth:"100%", height:"auto"}}
                   className="w-full h-full object-cover"
                 />
               </div>
