@@ -22,7 +22,7 @@ const Header = () => {
           <div className="flex items-center space-x-3 space-x-reverse">
             <div className="w-12 h-12 rounded-full overflow-hidden shadow-glow">
               <img 
-                src="/lovable-uploads/c8fda55b-40ce-4a40-8af4-d4dc90dcb223.png" 
+                src="/lovable-uploads/66dc480d-3098-49a3-8978-69d5f37a2196.png" 
                 alt="صداقت برگر لوگو" 
                 style={{maxWidth:"100%", height:"auto"}}
                 className="w-full h-full object-cover"

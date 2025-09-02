@@ -36,7 +36,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3 space-x-reverse">
               <div className="w-12 h-12 rounded-full overflow-hidden shadow-glow">
                 <img 
-                  src="/lovable-uploads/c8fda55b-40ce-4a40-8af4-d4dc90dcb223.png" 
+                  src="/lovable-uploads/66dc480d-3098-49a3-8978-69d5f37a2196.png" 
                   alt="صداقت برگر لوگو" 
                   style={{maxWidth:"100%", height:"auto"}}
                   className="w-full h-full object-cover"
@@ -57,7 +57,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3 space-x-reverse mt-4">
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-warm-gold">
                 <img 
-                  src="/lovable-uploads/7eb24bc1-4ce3-4137-a2b7-2a00d59348aa.png" 
+                  src="/lovable-uploads/bd222644-479e-4494-8a70-34157065232d.png" 
                   alt="قاری صاحب صفی الله محمدی - مدیر صداقت برگر" 
                   style={{maxWidth:"100%", height:"auto"}}
                   className="w-full h-full object-cover"
