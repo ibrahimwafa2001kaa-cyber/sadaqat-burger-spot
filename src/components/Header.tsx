@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 // Logo uploaded by user
 
 const Header = () => {
@@ -18,6 +19,9 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-card">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
+          {/* Sidebar trigger */}
+          <SidebarTrigger className="ml-2" />
+          
           {/* Logo */}
           <div className="flex items-center space-x-3 space-x-reverse">
             <div className="w-12 h-12 rounded-full overflow-hidden shadow-glow">
