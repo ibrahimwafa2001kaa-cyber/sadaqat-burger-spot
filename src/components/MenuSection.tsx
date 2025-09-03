@@ -212,7 +212,7 @@ const MenuSection = () => {
       name: "چپس با نان داغ",
       description: "چپس طلایی و کریسپی با نان تازه",
       price: "۳۰",
-      image: "/lovable-uploads/5aea4498-383d-4eff-b64f-6edb39bdcd9a.png",
+      image: "/lovable-uploads/c32daf20-6b76-4801-85fc-c96060e041ac.png",
       rating: 4.7,
       isPopular: true,
       isSpicy: false,
