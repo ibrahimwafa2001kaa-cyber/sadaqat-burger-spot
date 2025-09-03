@@ -200,7 +200,7 @@ const MenuSection = () => {
       name: "چای سبز با نان داغ",
       description: "چای سبز تازه دم با نان گرم",
       price: "۲۰",
-      image: "/lovable-uploads/1a3e2578-9ee8-4d63-a122-1189c157611b.png",
+      image: "/lovable-uploads/3f0761a6-d4f3-475a-bf94-5d3926bbb9bd.png",
       rating: 4.8,
       isPopular: true,
       isSpicy: false,
