@@ -1,5 +1,6 @@
-import { Share2, MessageCircle, Send, Facebook, Twitter, Copy, CheckCircle } from "lucide-react";
+import { Share2, MessageCircle, Send, Facebook, Twitter, Copy, CheckCircle, Moon, Sun, Monitor } from "lucide-react";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 import {
   Sidebar,
   SidebarContent,
@@ -15,6 +16,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export function AppSidebar() {
   const [copiedLink, setCopiedLink] = useState(false);
+  const { theme, setTheme } = useTheme();
   const restaurantUrl = window.location.href;
   const restaurantName = "صداقت برگر - رستوران";
 
@@ -54,6 +56,24 @@ export function AppSidebar() {
       color: "text-blue-400",
     },
   ];
+
+  const handleThemeToggle = () => {
+    if (theme === "light") setTheme("dark");
+    else if (theme === "dark") setTheme("system");
+    else setTheme("light");
+  };
+
+  const getThemeIcon = () => {
+    if (theme === "light") return Sun;
+    if (theme === "dark") return Moon;
+    return Monitor;
+  };
+
+  const getThemeLabel = () => {
+    if (theme === "light") return "روشن";
+    if (theme === "dark") return "تیره";
+    return "خودکار";
+  };
 
   return (
     <Sidebar className="border-r border-sidebar-border">
@@ -110,6 +130,29 @@ export function AppSidebar() {
                       کپی لینک
                     </>
                   )}
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Dark Mode Toggle */}
+            <Card className="mt-4">
+              <CardContent className="pt-6">
+                <Button
+                  onClick={handleThemeToggle}
+                  variant="outline"
+                  size="sm"
+                  className="w-full font-persian flex items-center justify-between"
+                >
+                  <div className="flex items-center gap-2">
+                    {(() => {
+                      const IconComponent = getThemeIcon();
+                      return <IconComponent className="w-4 h-4" />;
+                    })()}
+                    <span>حالت تیره</span>
+                  </div>
+                  <span className="text-xs bg-muted px-2 py-1 rounded-full">
+                    {getThemeLabel()}
+                  </span>
                 </Button>
               </CardContent>
             </Card>
