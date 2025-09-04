@@ -1,4 +1,4 @@
-import { Share2, MessageCircle, Send, Facebook, Twitter, Copy, CheckCircle, Moon, Sun, Monitor } from "lucide-react";
+import { Share2, MessageCircle, Send, Facebook, Twitter, Copy, CheckCircle, Moon, Sun, Monitor, Globe } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
 import {
@@ -13,12 +13,36 @@ import {
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export function AppSidebar() {
   const [copiedLink, setCopiedLink] = useState(false);
+  const [lang, setLang] = useState("fa");
   const { theme, setTheme } = useTheme();
   const restaurantUrl = window.location.href;
   const restaurantName = "صداقت برگر - رستوران";
+
+  // زبان‌های سایت
+  const translations = {
+    fa: {
+      home: "خانه",
+      menu: "منو",
+      contact: "تماس",
+      reviews: "نظرات مشتریان",
+      darkMode: "حالت تاریک",
+      share: "اشتراک‌گذاری",
+      language: "زبان",
+    },
+    ps: {
+      home: "کور",
+      menu: "مینو",
+      contact: "اړیکه",
+      reviews: "د مشتریانو نظرونه",
+      darkMode: "تیاره حالت",
+      share: "شریکول",
+      language: "ژبه",
+    },
+  };
 
   const handleCopyLink = async () => {
     try {
@@ -78,17 +102,47 @@ export function AppSidebar() {
   return (
     <Sidebar className="border-r border-sidebar-border">
       <SidebarContent>
+        {/* Language Selector */}
+        <SidebarGroup>
+          <SidebarGroupLabel className="font-persian text-lg font-bold">
+            <Globe className="w-5 h-5 ml-2" />
+            {translations[lang].language}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <Card className="mt-4">
+              <CardContent className="pt-6">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" className="w-full flex items-center gap-2 font-persian">
+                      <Globe className="w-5 h-5" />
+                      {translations[lang].language}: {lang === "fa" ? "دری" : "پشتو"}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-background border border-border">
+                    <DropdownMenuItem onClick={() => setLang("fa")} className="font-persian">
+                      دری
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setLang("ps")} className="font-persian">
+                      پشتو
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </CardContent>
+            </Card>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
         <SidebarGroup>
           <SidebarGroupLabel className="font-persian text-lg font-bold">
             <Share2 className="w-5 h-5 ml-2" />
-            اشتراک‌گذاری
+            {translations[lang].share}
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <Card className="mt-4">
               <CardHeader className="pb-3">
                 <CardTitle className="font-persian text-base flex items-center">
                   <Share2 className="w-4 h-4 ml-2" />
-                  اشتراک‌گذاری
+                  {translations[lang].share}
                 </CardTitle>
                 <CardDescription className="font-persian text-sm">
                   لینک رستوران ما را با دوستانتان به اشتراک بگذارید
@@ -148,7 +202,7 @@ export function AppSidebar() {
                       const IconComponent = getThemeIcon();
                       return <IconComponent className="w-4 h-4" />;
                     })()}
-                    <span>حالت تیره</span>
+                    <span>{translations[lang].darkMode}</span>
                   </div>
                   <span className="text-xs bg-muted px-2 py-1 rounded-full">
                     {getThemeLabel()}
