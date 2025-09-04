@@ -3,16 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { useLanguage } from "@/contexts/LanguageContext";
 // Logo uploaded by user
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navItems = [
-    { name: "خانه", href: "#home" },
-    { name: "منو", href: "#menu" },
-    { name: "درباره ما", href: "#about" },
-    { name: "تماس با ما", href: "#contact" },
+    { name: t('home'), href: "#home" },
+    { name: t('menu'), href: "#menu" },
+    { name: t('about'), href: "#about" },
+    { name: t('contact'), href: "#contact" },
   ];
 
   return (
@@ -33,8 +35,8 @@ const Header = () => {
               />
             </div>
             <div>
-              <h1 className="text-2xl font-bold font-persian text-primary">صداقت برگر</h1>
-              <p className="text-sm text-muted-foreground font-persian">طعم اصیل، کیفیت برتر</p>
+              <h1 className="text-2xl font-bold font-persian text-primary">{t('sedaghatBurger')}</h1>
+              <p className="text-sm text-muted-foreground font-persian">{t('authenticTasteQualityFooter')}</p>
             </div>
           </div>
 
@@ -58,7 +60,7 @@ const Header = () => {
               <span className="font-persian">+93789963664</span>
             </a>
             <Button variant="warm" size="sm" className="font-persian">
-              سفارش آنلاین
+              {t('orderOnline')}
             </Button>
           </div>
 
@@ -76,7 +78,7 @@ const Header = () => {
                     <span className="text-lg font-bold text-white">ص</span>
                   </div>
                   <div>
-                    <h2 className="text-lg font-bold font-persian text-primary">صداقت برگر</h2>
+                    <h2 className="text-lg font-bold font-persian text-primary">{t('sedaghatBurger')}</h2>
                   </div>
                 </div>
                 
@@ -99,7 +101,7 @@ const Header = () => {
                     <span className="font-persian">+93789963664</span>
                   </a>
                   <Button variant="warm" className="font-persian">
-                    سفارش آنلاین
+                    {t('orderOnline')}
                   </Button>
                 </div>
               </div>

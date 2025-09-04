@@ -1,6 +1,7 @@
 import { Share2, MessageCircle, Send, Facebook, Twitter, Copy, CheckCircle, Moon, Sun, Monitor, Globe } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   Sidebar,
   SidebarContent,
@@ -17,32 +18,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 export function AppSidebar() {
   const [copiedLink, setCopiedLink] = useState(false);
-  const [lang, setLang] = useState("fa");
+  const { language, setLanguage, t } = useLanguage();
   const { theme, setTheme } = useTheme();
   const restaurantUrl = window.location.href;
-  const restaurantName = "صداقت برگر - رستوران";
-
-  // زبان‌های سایت
-  const translations = {
-    fa: {
-      home: "خانه",
-      menu: "منو",
-      contact: "تماس",
-      reviews: "نظرات مشتریان",
-      darkMode: "حالت تاریک",
-      share: "اشتراک‌گذاری",
-      language: "زبان",
-    },
-    ps: {
-      home: "کور",
-      menu: "مینو",
-      contact: "اړیکه",
-      reviews: "د مشتریانو نظرونه",
-      darkMode: "تیاره حالت",
-      share: "شریکول",
-      language: "ژبه",
-    },
-  };
+  const restaurantName = language === 'fa' ? "صداقت برگر - رستوران" : "د صداقت برګر - رستوران";
 
   const handleCopyLink = async () => {
     try {
@@ -56,25 +35,25 @@ export function AppSidebar() {
 
   const shareLinks = [
     {
-      name: "واتساپ",
+      name: t('whatsapp'),
       icon: MessageCircle,
       url: `https://wa.me/?text=${encodeURIComponent(`${restaurantName} - ${restaurantUrl}`)}`,
       color: "text-green-600",
     },
     {
-      name: "تلگرام",
+      name: t('telegram'),
       icon: Send,
       url: `https://t.me/share/url?url=${encodeURIComponent(restaurantUrl)}&text=${encodeURIComponent(restaurantName)}`,
       color: "text-blue-500",
     },
     {
-      name: "فیسبوک",
+      name: t('facebook'),
       icon: Facebook,
       url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(restaurantUrl)}`,
       color: "text-blue-600",
     },
     {
-      name: "توییتر",
+      name: t('twitter'),
       icon: Twitter,
       url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(restaurantUrl)}&text=${encodeURIComponent(`${restaurantName} - بهترین رستوران!`)}`,
       color: "text-blue-400",
@@ -94,9 +73,9 @@ export function AppSidebar() {
   };
 
   const getThemeLabel = () => {
-    if (theme === "light") return "روشن";
-    if (theme === "dark") return "تیره";
-    return "خودکار";
+    if (theme === "light") return t('light');
+    if (theme === "dark") return t('dark');
+    return t('system');
   };
 
   return (
@@ -106,7 +85,7 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel className="font-persian text-lg font-bold">
             <Globe className="w-5 h-5 ml-2" />
-            {translations[lang].language}
+            {t('language')}
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <Card className="mt-4">
@@ -115,15 +94,15 @@ export function AppSidebar() {
                   <DropdownMenuTrigger asChild>
                     <Button variant="outline" className="w-full flex items-center gap-2 font-persian">
                       <Globe className="w-5 h-5" />
-                      {translations[lang].language}: {lang === "fa" ? "دری" : "پشتو"}
+                      {t('language')}: {language === "fa" ? t('dari') : t('pashto')}
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="bg-background border border-border">
-                    <DropdownMenuItem onClick={() => setLang("fa")} className="font-persian">
-                      دری
+                    <DropdownMenuItem onClick={() => setLanguage("fa")} className="font-persian">
+                      {t('dari')}
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setLang("ps")} className="font-persian">
-                      پشتو
+                    <DropdownMenuItem onClick={() => setLanguage("ps")} className="font-persian">
+                      {t('pashto')}
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -135,17 +114,17 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel className="font-persian text-lg font-bold">
             <Share2 className="w-5 h-5 ml-2" />
-            {translations[lang].share}
+            {t('share')}
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <Card className="mt-4">
               <CardHeader className="pb-3">
                 <CardTitle className="font-persian text-base flex items-center">
                   <Share2 className="w-4 h-4 ml-2" />
-                  {translations[lang].share}
+                  {t('share')}
                 </CardTitle>
                 <CardDescription className="font-persian text-sm">
-                  لینک رستوران ما را با دوستانتان به اشتراک بگذارید
+                  {t('shareDescription')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
@@ -176,12 +155,12 @@ export function AppSidebar() {
                   {copiedLink ? (
                     <>
                       <CheckCircle className="w-4 h-4 text-green-600" />
-                      کپی شد!
+                      {t('copied')}
                     </>
                   ) : (
                     <>
                       <Copy className="w-4 h-4" />
-                      کپی لینک
+                      {t('copyLink')}
                     </>
                   )}
                 </Button>
@@ -202,7 +181,7 @@ export function AppSidebar() {
                       const IconComponent = getThemeIcon();
                       return <IconComponent className="w-4 h-4" />;
                     })()}
-                    <span>{translations[lang].darkMode}</span>
+                    <span>{t('darkMode')}</span>
                   </div>
                   <span className="text-xs bg-muted px-2 py-1 rounded-full">
                     {getThemeLabel()}

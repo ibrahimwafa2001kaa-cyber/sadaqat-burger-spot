@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Plus, Flame, Leaf, Download } from "lucide-react";
 import LazyImage from "@/components/LazyImage";
+import { useLanguage } from "@/contexts/LanguageContext";
 import frenchFries from "@/assets/french-fries.jpg";
 import afghanBreakfast from "@/assets/afghan-breakfast.jpg";
 import teaWithBread from "@/assets/tea-with-bread.jpg";
@@ -15,6 +16,7 @@ import heroBurger from "@/assets/hero-burger.jpg";
 
 const MenuSection = () => {
   const { addItem } = useCart();
+  const { t } = useLanguage();
   const menuItems = [
     // برگرها
     {
@@ -243,13 +245,13 @@ const MenuSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge className="bg-primary text-primary-foreground mb-6 font-persian">
-            منوی غذا
+            {t('menuFood')}
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-persian text-primary">
-            منوی صداقت برگر
+            {t('sedaghatBurgerMenu')}
           </h2>
           <p className="text-xl text-muted-foreground font-persian max-w-2xl mx-auto">
-            طعم اصیل و کیفیت برتر در هر لقمه
+            {t('authenticTasteQuality')}
           </p>
           
           {/* Download Menu Button */}
@@ -260,7 +262,7 @@ const MenuSection = () => {
               className="font-persian border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               <Download className="w-4 h-4 ml-2" />
-              دانلود منو
+              {t('downloadMenu')}
             </Button>
           </div>
         </div>
@@ -268,19 +270,19 @@ const MenuSection = () => {
         {/* Menu Categories */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <Badge variant="secondary" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
-            همه موارد
+            {t('allItems')}
           </Badge>
           <Badge variant="outline" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
-            برگر
+            {t('burger')}
           </Badge>
           <Badge variant="outline" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
-            نوشیدنی
+            {t('drinks')}
           </Badge>
           <Badge variant="outline" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
-            صبحانه
+            {t('breakfast')}
           </Badge>
           <Badge variant="outline" className="px-6 py-2 text-sm font-persian cursor-pointer hover:bg-primary hover:text-primary-foreground transition-smooth">
-            پیش غذا
+            {t('appetizer')}
           </Badge>
         </div>
 
@@ -291,7 +293,7 @@ const MenuSection = () => {
               <div className="relative">
                 <LazyImage
                   src={item.image}
-                  alt={`${item.name} - رستوران صداقت برگر`}
+                  alt={`${item.name} - ${t('sedaghatBurger')}`}
                   className={`w-full object-cover group-hover:scale-110 transition-smooth ${
                     item.category === "نوشیدنی" || item.category === "پیش غذا" 
                       ? "h-32" 
@@ -303,7 +305,7 @@ const MenuSection = () => {
                 />
                 {item.isPopular && (
                   <Badge className="absolute top-4 right-4 bg-warm-gold text-warm-wood font-persian">
-                    محبوب
+                    {t('popular')}
                   </Badge>
                 )}
                 {item.isSpicy && (
@@ -334,7 +336,7 @@ const MenuSection = () => {
                 <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 space-x-reverse">
                     <span className="text-2xl font-bold text-primary font-persian">{item.price}</span>
-                    <span className="text-sm text-muted-foreground font-persian">افغانی</span>
+                    <span className="text-sm text-muted-foreground font-persian">{t('afghani')}</span>
                   </div>
                   
                   <Button 
@@ -350,7 +352,7 @@ const MenuSection = () => {
                     })}
                   >
                     <Plus className="w-4 h-4 ml-2" />
-                    افزودن
+                    {t('add')}
                   </Button>
                 </div>
               </CardContent>
@@ -361,7 +363,7 @@ const MenuSection = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <Button variant="hero" size="lg" className="text-lg px-8 py-6 font-persian">
-            مشاهده منو کامل
+            {t('viewFullMenu')}
           </Button>
         </div>
       </div>

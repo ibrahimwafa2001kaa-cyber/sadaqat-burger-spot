@@ -2,15 +2,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Star } from "lucide-react";
 import LazyImage from "@/components/LazyImage";
 import heroBurger from "@/assets/hero-burger.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <LazyImage
           src={heroBurger}
-          alt="صداقت برگر - بهترین برگر چاریکار پروان - طعم اصیل و کیفیت برتر"
+          alt={`${t('sedaghatBurger')} - ${t('bestForFamily')}`}
           className="w-full h-full object-cover"
           priority={true}
           width={1920}
@@ -29,50 +32,50 @@ const HeroSection = () => {
                 <Star key={star} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
-            <span className="text-lg font-persian mr-2">رتبه ۵ از ۵ در طعم و کیفیت</span>
+            <span className="text-lg font-persian mr-2">{t('rating5of5')}</span>
           </div>
 
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up font-persian leading-tight">
-            صداقت برگر
+            {t('sedaghatBurger')}
             <span className="block text-lg md:text-xl lg:text-2xl text-white/80 font-light mt-2">
-              تاسیس ۲۰۱۶
+              {t('established2016')}
             </span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-xl md:text-2xl mb-4 animate-fade-in-up font-persian">
-            طعم اصیل، کیفیت برتر، لذت بی‌پایان
+            {t('authentictaste')}
           </p>
           
           <p className="text-lg md:text-xl mb-8 text-gray-200 animate-fade-in-up font-persian">
-            برای خود و خانواده تان بهترین غذا را بدهید
+            {t('bestForFamily')}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
             <Button variant="hero" size="lg" className="text-lg px-8 py-6 font-persian">
-              مشاهده منو
+              {t('viewMenu')}
               <ArrowLeft className="w-5 h-5 mr-2" />
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-black font-persian" asChild>
-              <a href="tel:+93789963664">سفارش تلفنی: +93789963664</a>
+              <a href="tel:+93789963664">{t('phoneOrder')}: +93789963664</a>
             </Button>
           </div>
 
           {/* Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 animate-fade-in-up">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <h3 className="text-xl font-bold mb-2 font-persian">مواد اولیه تازه</h3>
-              <p className="text-gray-200 font-persian">استفاده از تازه‌ترین مواد اولیه روزانه</p>
+              <h3 className="text-xl font-bold mb-2 font-persian">{t('freshIngredients')}</h3>
+              <p className="text-gray-200 font-persian">{t('freshIngredientsDesc')}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <h3 className="text-xl font-bold mb-2 font-persian">طعم بی‌نظیر</h3>
-              <p className="text-gray-200 font-persian">دستور پخت منحصر به فرد و طعم اصیل</p>
+              <h3 className="text-xl font-bold mb-2 font-persian">{t('uniqueTaste')}</h3>
+              <p className="text-gray-200 font-persian">{t('uniqueTasteDesc')}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <h3 className="text-xl font-bold mb-2 font-persian">سرویس سریع</h3>
-              <p className="text-gray-200 font-persian">آماده سازی و تحویل در کمترین زمان</p>
+              <h3 className="text-xl font-bold mb-2 font-persian">{t('fastService')}</h3>
+              <p className="text-gray-200 font-persian">{t('fastServiceDesc')}</p>
             </div>
           </div>
         </div>

@@ -5,8 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function CustomerReviews() {
+  const { t } = useLanguage();
   const [reviews, setReviews] = useState([
     { name: "علی احمدی", address: "چهارراهی سرسبزی", province: "کابل", text: "برگرهاتون عالی بود، خیلی خوشمزه و تازه 👌" },
     { name: "زهرا رضایی", address: "نزدیک پل باغ عمومی", province: "پروان", text: "محیط تمیز و برخورد عالی پرسنل 👏" }
@@ -39,7 +41,7 @@ export default function CustomerReviews() {
         transition={{ duration: 0.5 }}
         className="text-3xl font-bold text-center mb-8"
       >
-        💬 نظر مشتریان
+        💬 {t('customerReviews')}
       </motion.h2>
 
       {/* فرم ثبت نظر */}

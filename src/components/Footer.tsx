@@ -5,6 +5,7 @@ import {
   Clock,
   Heart
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 // Images uploaded by user
 import facebookLogo from "@/assets/facebook-logo.png";
 import mapsLogo from "@/assets/maps-logo.png";
@@ -12,12 +13,13 @@ import whatsappLogo from "@/assets/whatsapp-logo.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const quickLinks = [
-    { name: "خانه", href: "#home" },
-    { name: "منو", href: "#menu" },
-    { name: "درباره ما", href: "#about" },
-    { name: "تماس با ما", href: "#contact" }
+    { name: t('home'), href: "#home" },
+    { name: t('menu'), href: "#menu" },
+    { name: t('about'), href: "#about" },
+    { name: t('contact'), href: "#contact" }
   ];
 
   const menuHighlights = [
@@ -43,14 +45,13 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold font-persian">صداقت برگر</h3>
-                <p className="text-sm text-warm-cream font-persian">طعم اصیل، کیفیت برتر</p>
+                <h3 className="text-2xl font-bold font-persian">{t('sedaghatBurger')}</h3>
+                <p className="text-sm text-warm-cream font-persian">{t('authenticTasteQualityFooter')}</p>
               </div>
             </div>
             
             <p className="text-warm-cream/90 font-persian leading-relaxed">
-              صداقت برگر تحت مدیریت قاری صاحب صفی الله محمدی، 
-              برای خود و خانواده تان بهترین غذا را ارائه می‌دهد.
+              {t('managerDescription')}
             </p>
             
             {/* Manager Photo */}

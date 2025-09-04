@@ -4,45 +4,48 @@ import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Award, Clock } from "lucide-react";
 import LazyImage from "@/components/LazyImage";
 import restaurantInterior from "@/assets/restaurant-interior.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+  
   const stats = [
     {
       icon: Users,
       number: "۱۰,۰۰۰+",
-      label: "مشتری راضی"
+      label: t('satisfiedCustomers')
     },
     {
       icon: Award,
       number: "۱۰+",
-      label: "سال تجربه"
+      label: t('yearsExperience')
     },
     {
       icon: Heart,
       number: "۱۰۰%",
-      label: "رضایت مشتری"
+      label: t('customerSatisfaction')
     },
     {
       icon: Clock,
       number: "۱۰",
-      label: "دقیقه آماده‌سازی"
+      label: t('preparationTime')
     }
   ];
 
   const values = [
     {
-      title: "کیفیت برتر",
-      description: "استفاده از بهترین و تازه‌ترین مواد اولیه",
+      title: t('premiumQuality'),
+      description: t('premiumQualityDesc'),
       color: "warm-orange"
     },
     {
-      title: "طعم اصیل",
-      description: "دستور پخت منحصر به فرد و سنتی",
+      title: t('authenticTasteValue'),
+      description: t('authenticTasteValueDesc'),
       color: "warm-red"
     },
     {
-      title: "سرویس سریع",
-      description: "تحویل در کمترین زمان با بالاترین کیفیت",
+      title: t('fastServiceValue'),
+      description: t('fastServiceValueDesc'),
       color: "warm-gold"
     }
   ];
@@ -54,21 +57,19 @@ const AboutSection = () => {
           {/* Content */}
           <div className="order-2 lg:order-1">
             <Badge className="bg-warm-gold text-warm-wood mb-6 font-persian">
-              داستان ما
+              {t('ourStory')}
             </Badge>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-persian text-primary">
-              صداقت برگر
+              {t('sedaghatBurger')}
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 font-persian leading-relaxed">
-              صداقت برگر تحت مدیریت قاری صاحب صفی الله محمدی، 
-              با هدف ارائه بهترین برگرها و غذاهای سالم برای خانواده‌ها در سال ۲۰۱۶ شروع به کار کرد.
+              {t('aboutDescription1')}
             </p>
             
             <p className="text-lg text-muted-foreground mb-8 font-persian leading-relaxed">
-              ما معتقدیم که برای خود و خانواده تان بهترین غذا را بدهید. با استفاده از گوشت تازه روزانه، 
-              نان تازه پخت و سبزیجات طبیعی، هر برگری که سرو می‌کنیم حاوی عشق و دقت است.
+              {t('aboutDescription2')}
             </p>
 
             {/* Values */}
@@ -85,7 +86,7 @@ const AboutSection = () => {
             </div>
 
             <Button variant="warm" size="lg" className="font-persian">
-              بیشتر بدانید
+              {t('learnMore')}
             </Button>
           </div>
 
@@ -94,7 +95,7 @@ const AboutSection = () => {
             <div className="relative overflow-hidden rounded-2xl shadow-warm">
               <LazyImage
                 src={restaurantInterior}
-                alt="فضای داخلی رستوران صداقت برگر - محیطی گرم و دوستانه برای خانواده"
+                alt={`${t('sedaghatBurger')} - فضای داخلی رستوران`}
                 className="w-full h-[500px] object-cover"
                 width={800}
                 height={500}
