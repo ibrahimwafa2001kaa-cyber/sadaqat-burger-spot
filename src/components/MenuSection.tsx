@@ -21,8 +21,8 @@ const MenuSection = () => {
     // برگرها
     {
       id: 2,
-      name: "برگر ساده",
-      description: "برگر با سبزیجات اساسی",
+      name: t('simpleburger'),
+      description: t('simpleburgerdesc'),
       price: "۲۰",
       image: "/lovable-uploads/5aea4498-383d-4eff-b64f-6edb39bdcd9a.png",
       rating: 4.6,
@@ -32,8 +32,8 @@ const MenuSection = () => {
     },
     {
       id: 3,
-      name: "برگر متوسط",
-      description: "برگر با پنیر و سبزیجات کامل",
+      name: t('mediumburger'),
+      description: t('mediumburgerdesc'),
       price: "۳۰",
       image: veggieBurger,
       rating: 4.8,
@@ -43,8 +43,8 @@ const MenuSection = () => {
     },
     {
       id: 4,
-      name: "برگر بزرگ",
-      description: "برگر بزرگ با تمام مواد اولیه",
+      name: t('largeburger'),
+      description: t('largeburgerdesc'),
       price: "۵۰",
       image: heroBurger,
       rating: 4.9,
@@ -54,8 +54,8 @@ const MenuSection = () => {
     },
     {
       id: 5,
-      name: "برگر دوبل",
-      description: "دو عدد پتی با پنیر و سبزیجات",
+      name: t('doubleburger'),
+      description: t('doubleburgerdesc'),
       price: "۷۰",
       image: frenchFries,
       rating: 4.9,
@@ -66,8 +66,8 @@ const MenuSection = () => {
     // نوشیدنی های سرد
     {
       id: 6,
-      name: "انرژی ایکس بال",
-      description: "نوشیدنی انرژی زا سرد",
+      name: t('energyxball'),
+      description: t('energyxballdesc'),
       price: "۳۰",
       image: "/lovable-uploads/fcdb4591-64fa-4e41-9949-cc04bdee1cd5.png",
       rating: 4.3,
@@ -77,8 +77,8 @@ const MenuSection = () => {
     },
     {
       id: 7,
-      name: "پپسی",
-      description: "نوشیدنی گازدار پپسی",
+      name: t('pepsi'),
+      description: t('pepsidesc'),
       price: "۲۰",
       image: "/lovable-uploads/65063039-1c43-4a62-a6b4-acff78350c9e.png",
       rating: 4.5,
@@ -88,8 +88,8 @@ const MenuSection = () => {
     },
     {
       id: 8,
-      name: "کوکاکولا",
-      description: "نوشیدنی گازدار کوکاکولا",
+      name: t('cocacola'),
+      description: t('cocacoladesc'),
       price: "۱۰",
       image: "/lovable-uploads/ffd70cb4-d749-4b31-bf14-605f4a9a67a9.png",
       rating: 4.5,
@@ -99,8 +99,8 @@ const MenuSection = () => {
     },
     {
       id: 9,
-      name: "انرژی الکوزی",
-      description: "نوشیدنی انرژی زا الکوزی",
+      name: t('energyalkozi'),
+      description: t('energyalkozidesc'),
       price: "۴۰",
       image: "/lovable-uploads/771147af-1042-4be8-b8f1-e8f26f92f82a.png",
       rating: 4.2,
@@ -110,8 +110,8 @@ const MenuSection = () => {
     },
     {
       id: 10,
-      name: "پارادایس",
-      description: "آبمیوه طبیعی پارادایس",
+      name: t('paradise'),
+      description: t('paradisedesc'),
       price: "۱۰",
       image: "/lovable-uploads/bffbe3bd-1034-4d12-8de2-a96610282cae.png",
       rating: 4.4,
@@ -121,8 +121,8 @@ const MenuSection = () => {
     },
     {
       id: 11,
-      name: "آب معدنی کوچک",
-      description: "بطری آب معدنی کوچک",
+      name: t('watersmall'),
+      description: t('watersmalldesc'),
       price: "۱۰",
       image: "/lovable-uploads/98f0d13e-6844-4636-92bd-04feea0632af.png",
       rating: 4.0,
@@ -132,8 +132,8 @@ const MenuSection = () => {
     },
     {
       id: 12,
-      name: "آب معدنی بزرگ",
-      description: "بطری آب معدنی بزرگ",
+      name: t('waterlarge'),
+      description: t('waterlargedesc'),
       price: "۲۰",
       image: "/lovable-uploads/24fd629c-696d-498e-986b-68b174fa998b.png",
       rating: 4.0,
@@ -143,8 +143,8 @@ const MenuSection = () => {
     },
     {
       id: 18,
-      name: "کوکاکولا بزرگ",
-      description: "نوشیدنی گازدار کوکاکولا بزرگ",
+      name: t('cocacolalarge'),
+      description: t('cocacolargedesc'),
       price: "۵۰",
       image: "/lovable-uploads/7e097f7a-29d2-4787-9f6e-e88ca06b0696.png",
       rating: 4.5,
@@ -154,8 +154,8 @@ const MenuSection = () => {
     },
     {
       id: 19,
-      name: "A ONE",
-      description: "نوشیدنی انرژی زا A ONE",
+      name: t('aone'),
+      description: t('aonedesc'),
       price: "۲۰",
       image: "/lovable-uploads/ddf5b82b-735c-4333-aba2-f4667f89fc51.png",
       rating: 4.3,
@@ -166,8 +166,8 @@ const MenuSection = () => {
     // صبحانه
     {
       id: 13,
-      name: "تخم مرغ جوشانده",
-      description: "تخم مرغ تازه آب پز با نان",
+      name: t('boiledegg'),
+      description: t('boiledeggdesc'),
       price: "۱۰",
       image: "/lovable-uploads/984d9553-af23-4eaf-b9b1-c2b403e52dd4.png",
       rating: 4.6,
@@ -177,8 +177,8 @@ const MenuSection = () => {
     },
     {
       id: 14,
-      name: "املت",
-      description: "املت تازه با سبزیجات",
+      name: t('omelet'),
+      description: t('omeletdesc'),
       price: "۳۰",
       image: "/lovable-uploads/a4327bbf-d588-4c3d-899a-a024878bed61.png",
       rating: 4.7,
@@ -188,8 +188,8 @@ const MenuSection = () => {
     },
     {
       id: 15,
-      name: "کرایی",
-      description: "تخم مرغ سرخ شده با طعم محلی",
+      name: t('krayi'),
+      description: t('krayidesc'),
       price: "۵۰",
       image: "/lovable-uploads/da8a2c9d-c0fa-4adc-8eab-133738e230a9.png",
       rating: 4.5,
@@ -199,8 +199,8 @@ const MenuSection = () => {
     },
     {
       id: 16,
-      name: "چای سبز با نان داغ",
-      description: "چای سبز تازه دم با نان گرم",
+      name: t('greentea'),
+      description: t('greentedesc'),
       price: "۲۰",
       image: "/lovable-uploads/3f0761a6-d4f3-475a-bf94-5d3926bbb9bd.png",
       rating: 4.8,
@@ -211,8 +211,8 @@ const MenuSection = () => {
     // سیب زمینی
     {
       id: 17,
-      name: "چپس با نان داغ",
-      description: "چپس طلایی و کریسپی با نان تازه",
+      name: t('chips'),
+      description: t('chipsdesc'),
       price: "۳۰",
       image: "/lovable-uploads/c32daf20-6b76-4801-85fc-c96060e041ac.png",
       rating: 4.7,

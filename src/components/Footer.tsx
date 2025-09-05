@@ -23,10 +23,10 @@ const Footer = () => {
   ];
 
   const menuHighlights = [
-    "برگر کوچک - ۱۰ افغانی",
-    "برگر متوسط - ۳۰ افغانی",
-    "برگر بزرگ - ۵۰ افغانی",
-    "برگر دوبل - ۷۰ افغانی"
+    t('menuHighlight1'),
+    t('menuHighlight2'),
+    t('menuHighlight3'),
+    t('menuHighlight4')
   ];
 
   return (
@@ -65,22 +65,22 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <p className="text-warm-gold font-bold font-persian">قاری صاحب صفی الله محمدی</p>
-                <p className="text-warm-cream/80 text-sm font-persian">مدیر عامل</p>
+                <p className="text-warm-gold font-bold font-persian">{t('manager')}</p>
+                <p className="text-warm-cream/80 text-sm font-persian">{t('ceo')}</p>
               </div>
             </div>
 
             <div className="flex items-center space-x-4 space-x-reverse">
               <Badge className="bg-warm-gold text-warm-wood font-persian">
                 <Heart className="w-4 h-4 mr-2" />
-                ساخته شده با عشق
+                {t('madeWithLove')}
               </Badge>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="text-xl font-bold font-persian text-warm-gold">دسترسی سریع</h4>
+            <h4 className="text-xl font-bold font-persian text-warm-gold">{t('quickAccess')}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -97,7 +97,7 @@ const Footer = () => {
 
           {/* Menu Highlights */}
           <div className="space-y-6">
-            <h4 className="text-xl font-bold font-persian text-warm-gold">برگرهای محبوب</h4>
+            <h4 className="text-xl font-bold font-persian text-warm-gold">{t('popularBurgers')}</h4>
             <ul className="space-y-3">
               {menuHighlights.map((item, index) => (
                 <li key={index} className="text-warm-cream/90 font-persian">
@@ -109,7 +109,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h4 className="text-xl font-bold font-persian text-warm-gold">اطلاعات تماس</h4>
+            <h4 className="text-xl font-bold font-persian text-warm-gold">{t('contactInfo')}</h4>
             
             <div className="space-y-4">
               <a href="tel:+93789963664" className="flex items-start space-x-3 space-x-reverse hover:text-warm-gold transition-smooth group">
@@ -122,16 +122,16 @@ const Footer = () => {
               <a href="https://maps.app.goo.gl/RYrz56uhyhrVX4NdA" target="_blank" rel="noopener noreferrer" className="flex items-start space-x-3 space-x-reverse hover:text-warm-gold transition-smooth group">
                 <MapPin className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0 group-hover:scale-110 transition-smooth" />
                 <div>
-                  <p className="text-warm-cream/90 font-persian group-hover:text-warm-gold transition-smooth">افغانستان، پروان، شهر چاریکار</p>
-                  <p className="text-warm-cream/90 font-persian group-hover:text-warm-gold transition-smooth">جنب گذر اکرم خان مقابل شیریخ پزی حاجی جان آغا</p>
+                  <p className="text-warm-cream/90 font-persian group-hover:text-warm-gold transition-smooth">{t('location1')}</p>
+                  <p className="text-warm-cream/90 font-persian group-hover:text-warm-gold transition-smooth">{t('location2')}</p>
                 </div>
               </a>
               
               <div className="flex items-start space-x-3 space-x-reverse">
                 <Clock className="w-5 h-5 text-warm-gold mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-warm-cream/90 font-persian">شنبه تا پنج‌شنبه: ۶ صبح - ۸ شب</p>
-                  <p className="text-warm-cream/90 font-persian">جمعه‌ها: ۵:۳۰ صبح - ۷:۴۵ شب</p>
+                  <p className="text-warm-cream/90 font-persian">{t('workingHours1')}</p>
+                  <p className="text-warm-cream/90 font-persian">{t('workingHours2')}</p>
                 </div>
               </div>
             </div>
@@ -170,15 +170,15 @@ const Footer = () => {
         <div className="border-t border-warm-cream/20 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-warm-cream/70 text-center md:text-left font-persian">
-              © {currentYear} صداقت برگر. تمامی حقوق محفوظ است.
+              © {currentYear} {t('sedaghatBurger')}. {t('allRightsReserved')}
             </p>
             
             <div className="flex items-center space-x-6 space-x-reverse">
               <a href="#" className="text-warm-cream/70 hover:text-warm-gold transition-smooth text-sm font-persian">
-                حریم خصوصی
+                {t('privacy')}
               </a>
               <a href="#" className="text-warm-cream/70 hover:text-warm-gold transition-smooth text-sm font-persian">
-                شرایط استفاده
+                {t('terms')}
               </a>
             </div>
           </div>
