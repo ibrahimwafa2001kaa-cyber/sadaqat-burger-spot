@@ -1,8 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Navigation, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const GoogleMaps = () => {
+  const { t } = useLanguage();
+  
   const handleDirections = () => {
     window.open('https://maps.app.goo.gl/RYrz56uhyhrVX4NdA', '_blank', 'noopener,noreferrer');
   };
@@ -12,10 +15,10 @@ const GoogleMaps = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 font-persian text-primary">
-            موقعیت ما
+            {t('ourLocation')}
           </h2>
           <p className="text-xl text-muted-foreground font-persian max-w-2xl mx-auto">
-            به راحتی ما را پیدا کنید
+            {t('findUsEasily')}
           </p>
         </div>
 
@@ -43,25 +46,25 @@ const GoogleMaps = () => {
               <CardHeader>
                 <CardTitle className="flex items-center font-persian text-xl">
                   <MapPin className="w-6 h-6 text-primary ml-2" />
-                  آدرس کامل
+                  {t('fullAddress')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 font-persian">
                 <div>
                   <p className="text-lg font-medium text-card-foreground">
-                    افغانستان، پروان، شهر چاریکار
+                    {t('addressLine1')}
                   </p>
                   <p className="text-muted-foreground">
-                    جنب گذر اکرم خان مقابل شیریخ پزی حاجی جان آغا
+                    {t('addressLine2')}
                   </p>
                 </div>
                 
                 <div className="bg-muted/50 p-4 rounded-lg">
-                  <h4 className="font-medium mb-2">نشانه‌های مهم:</h4>
+                  <h4 className="font-medium mb-2">{t('importantLandmarks')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• روبروی شیریخ پزی حاجی جان آغا</li>
-                    <li>• در گذر اکرم خان</li>
-                    <li>• قابل دسترسی با تمامی وسایل نقلیه</li>
+                    <li>{t('landmark1')}</li>
+                    <li>{t('landmark2')}</li>
+                    <li>{t('landmark3')}</li>
                   </ul>
                 </div>
 
@@ -72,7 +75,7 @@ const GoogleMaps = () => {
                   className="w-full font-persian"
                 >
                   <Navigation className="w-5 h-5 ml-2" />
-                  مسیریابی با نقشه گوگل
+                  {t('googleDirections')}
                 </Button>
               </CardContent>
             </Card>
@@ -80,16 +83,16 @@ const GoogleMaps = () => {
             <Card className="shadow-card">
               <CardContent className="p-6">
                 <h4 className="font-bold font-persian text-lg mb-4 text-card-foreground">
-                  ساعات کاری
+                  {t('workingHoursTitle')}
                 </h4>
                 <div className="space-y-2 font-persian">
                   <div className="flex justify-between">
-                    <span>شنبه تا پنج‌شنبه:</span>
-                    <span className="font-medium">۶ صبح - ۸ شب</span>
+                    <span>{t('satToThu')}</span>
+                    <span className="font-medium">{t('satToThuTime')}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>جمعه‌ها:</span>
-                    <span className="font-medium">۵:۳۰ صبح - ۷:۴۵ شب</span>
+                    <span>{t('friday')}</span>
+                    <span className="font-medium">{t('fridayTime')}</span>
                   </div>
                 </div>
               </CardContent>

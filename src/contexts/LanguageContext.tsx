@@ -153,7 +153,24 @@ const translations: Translations = {
     menuHighlight1: "برگر کوچک - ۱۰ افغانی",
     menuHighlight2: "برگر متوسط - ۳۰ افغانی", 
     menuHighlight3: "برگر بزرگ - ۵۰ افغانی",
-    menuHighlight4: "برگر دوبل - ۷۰ افغانی"
+    menuHighlight4: "برگر دوبل - ۷۰ افغانی",
+    
+    // Location Section
+    ourLocation: "موقعیت ما",
+    findUsEasily: "به راحتی ما را پیدا کنید",
+    fullAddress: "آدرس کامل",
+    addressLine1: "افغانستان، پروان، شهر چاریکار",
+    addressLine2: "جنب گذر اکرم خان مقابل شیریخ پزی حاجی جان آغا",
+    importantLandmarks: "نشانه‌های مهم:",
+    landmark1: "• روبروی شیریخ پزی حاجی جان آغا",
+    landmark2: "• در گذر اکرم خان",
+    landmark3: "• قابل دسترسی با تمامی وسایل نقلیه",
+    googleDirections: "مسیریابی با نقشه گوگل",
+    workingHoursTitle: "ساعات کاری",
+    satToThu: "شنبه تا پنج‌شنبه:",
+    friday: "جمعه‌ها:",
+    satToThuTime: "۶ صبح - ۸ شب",
+    fridayTime: "۵:۳۰ صبح - ۷:۴۵ شب"
   },
   ps: {
     // Header
@@ -294,7 +311,24 @@ const translations: Translations = {
     menuHighlight1: "کشر برګر - ۱۰ افغانۍ",
     menuHighlight2: "منځنۍ برګر - ۳۰ افغانۍ",
     menuHighlight3: "لوی برګر - ۵۰ افغانۍ",
-    menuHighlight4: "دوه ګونی برګر - ۷۰ افغانۍ"
+    menuHighlight4: "دوه ګونی برګر - ۷۰ افغانۍ",
+    
+    // Location Section
+    ourLocation: "زموږ موقعیت",
+    findUsEasily: "موږ په اسانۍ سره ومومئ",
+    fullAddress: "بشپړ آدرس",
+    addressLine1: "افغانستان، پروان، د چاریکار ښار",
+    addressLine2: "د اکرم خان د تیرېدو څنګ ته د حاجي جان آغا د شیرینۍ پزونې مخ ته",
+    importantLandmarks: "مهم نښه نښانې:",
+    landmark1: "• د حاجي جان آغا د شیرینۍ پزونې مخ ته",
+    landmark2: "• په د اکرم خان تیرېدو کې",
+    landmark3: "• د ټولو وسایلو سره د رسیدو وړ",
+    googleDirections: "د گوګل نقشې سره لارښود",
+    workingHoursTitle: "د کار ساعتونه",
+    satToThu: "شنبه څخه پنج شنبه:",
+    friday: "جمعه:",
+    satToThuTime: "۶ سهار - ۸ ماښام",
+    fridayTime: "۵:۳۰ سهار - ۷:۴۵ ماښام"
   }
 };
 
