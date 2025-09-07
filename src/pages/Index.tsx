@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import AboutSection from "@/components/AboutSection";
 import CustomerReviews from "@/components/CustomerReviews";
+import Gallery from "@/components/Gallery";
 import GoogleMaps from "@/components/GoogleMaps";
 import Footer from "@/components/Footer";
 import { AppSidebar } from "@/components/AppSidebar";
@@ -27,6 +28,7 @@ const Index = () => {
               <HeroSection />
               <MenuSection />
               <AboutSection />
+              <Gallery />
               <CustomerReviews />
               <GoogleMaps />
             </main>

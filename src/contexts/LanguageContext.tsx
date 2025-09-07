@@ -13,7 +13,7 @@ interface Translations {
   ps: Record<string, string>;
 }
 
-const translations: Translations = {
+const translations = {
   fa: {
     // Header
     home: "خانه",
@@ -329,6 +329,28 @@ const translations: Translations = {
     friday: "جمعه:",
     satToThuTime: "۶ سهار - ۸ ماښام",
     fridayTime: "۵:۳۰ سهار - ۷:۴۵ ماښام"
+  },
+  
+  // Gallery
+  gallery: {
+    fa: 'گالری تصاویر',
+    ps: 'د انځورونو ګالري'
+  },
+  galleryDescription: {
+    fa: 'نگاهی به فضای دلنشین رستوران ما',
+    ps: 'زموږ د رستورانت ښکلي چاپیریال ته کتنه'
+  },
+  galleryAlt: {
+    fa: 'تصاویر رستوران',
+    ps: 'د رستورانت انځورونه'
+  },
+  previousImage: {
+    fa: 'تصویر قبلی',
+    ps: 'پخوانی انځور'
+  },
+  nextImage: {
+    fa: 'تصویر بعدی',
+    ps: 'راتلونکی انځور'
   }
 };
 
