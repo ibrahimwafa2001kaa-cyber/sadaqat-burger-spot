@@ -36,7 +36,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up font-persian leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up font-persian leading-tight mt-4">
             {t('sedaghatBurger')}
             <span className="block text-lg md:text-xl lg:text-2xl text-white/80 font-light mt-2">
               {t('established2016')}
