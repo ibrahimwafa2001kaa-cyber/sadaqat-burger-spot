@@ -8,7 +8,7 @@ const images = [
   "/lovable-uploads/8b90eb71-4292-43db-b6c7-21b47d37c0fd.png", // عکس آپلود شده
   "/lovable-uploads/6be413f7-cef4-420e-a054-66a7b5b2e960.png", // عکس آپلود شده
   "/lovable-uploads/9dc44a66-11bb-4f87-94c2-8895b36d9dd8.png", // عکس آپلود شده
-  "/images/gallery5.jpg", // جای خالی
+  "/lovable-uploads/09f4b736-2fc4-4b02-a616-15b82f8204be.png", // عکس آپلود شده
   "/images/gallery6.jpg", // جای خالی
   "/images/gallery7.jpg", // جای خالی
   "/images/gallery8.jpg", // جای خالی
