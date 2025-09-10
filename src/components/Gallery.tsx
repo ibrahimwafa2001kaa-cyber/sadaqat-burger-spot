@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 // لیست عکس‌ها (۱۰ عدد)
 const images = [
   "/lovable-uploads/ba47a0da-0b6f-409a-8168-aa905be1bde9.png", // عکس آپلود شده
-  "/images/gallery2.jpg", // جای خالی
+  "/lovable-uploads/8b90eb71-4292-43db-b6c7-21b47d37c0fd.png", // عکس آپلود شده
   "/images/gallery3.jpg", // جای خالی
   "/images/gallery4.jpg", // جای خالی
   "/images/gallery5.jpg", // جای خالی
