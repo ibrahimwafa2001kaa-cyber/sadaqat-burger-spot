@@ -59,7 +59,7 @@ const CompactMenu = () => {
   const filtered = active === "all" ? items : items.filter(i => i.category === active);
 
   return (
-    <section id="compact-menu" className="py-16 bg-gradient-to-b from-background to-muted/40">
+    <section id="menu" className="py-16 bg-gradient-to-b from-background to-muted/40">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <Badge className="bg-primary text-primary-foreground mb-3 font-persian">{t("menuFood")}</Badge>
