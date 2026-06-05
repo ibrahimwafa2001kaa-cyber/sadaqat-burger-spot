@@ -192,7 +192,14 @@ const translations = {
     contactCall: "تماس تلفنی",
     contactWhatsapp: "واتساپ",
     contactToggle: "راه‌های ارتباطی",
-    whatsappDefaultMessage: "سلام، می‌خواهم سفارش بدهم"
+    whatsappDefaultMessage: "سلام، می‌خواهم سفارش بدهم",
+
+    // Gallery
+    gallery: "گالری تصاویر",
+    galleryDescription: "نگاهی به فضای دلنشین رستوران ما",
+    galleryAlt: "تصاویر رستوران",
+    previousImage: "تصویر قبلی",
+    nextImage: "تصویر بعدی"
   },
   ps: {
     // Header
@@ -372,29 +379,14 @@ const translations = {
     contactCall: "تلیفوني اړیکه",
     contactWhatsapp: "واټس اپ",
     contactToggle: "د اړیکې لارې",
-    whatsappDefaultMessage: "سلام، غواړم امر ورکړم"
-  },
-  
-  // Gallery
-  gallery: {
-    fa: 'گالری تصاویر',
-    ps: 'د انځورونو ګالري'
-  },
-  galleryDescription: {
-    fa: 'نگاهی به فضای دلنشین رستوران ما',
-    ps: 'زموږ د رستورانت ښکلي چاپیریال ته کتنه'
-  },
-  galleryAlt: {
-    fa: 'تصاویر رستوران',
-    ps: 'د رستورانت انځورونه'
-  },
-  previousImage: {
-    fa: 'تصویر قبلی',
-    ps: 'پخوانی انځور'
-  },
-  nextImage: {
-    fa: 'تصویر بعدی',
-    ps: 'راتلونکی انځور'
+    whatsappDefaultMessage: "سلام، غواړم امر ورکړم",
+
+    // Gallery
+    gallery: "د انځورونو ګالري",
+    galleryDescription: "زموږ د رستورانت ښکلي چاپیریال ته کتنه",
+    galleryAlt: "د رستورانت انځورونه",
+    previousImage: "پخوانی انځور",
+    nextImage: "راتلونکی انځور"
   }
 };
 
