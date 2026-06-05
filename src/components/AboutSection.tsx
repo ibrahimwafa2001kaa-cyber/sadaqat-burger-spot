@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Users, Award, Clock } from "lucide-react";
 import LazyImage from "@/components/LazyImage";
-import restaurantInterior from "@/assets/restaurant-interior.jpg";
+const restaurantInterior = "/lovable-uploads/ba47a0da-0b6f-409a-8168-aa905be1bde9.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutSection = () => {

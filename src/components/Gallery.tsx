@@ -2,18 +2,16 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// لیست عکس‌ها (۱۰ عدد)
+// لیست عکس‌های آپلودشده توسط مالک
 const images = [
-  "/lovable-uploads/ba47a0da-0b6f-409a-8168-aa905be1bde9.png", // عکس آپلود شده
-  "/lovable-uploads/8b90eb71-4292-43db-b6c7-21b47d37c0fd.png", // عکس آپلود شده
-  "/lovable-uploads/6be413f7-cef4-420e-a054-66a7b5b2e960.png", // عکس آپلود شده
-  "/lovable-uploads/9dc44a66-11bb-4f87-94c2-8895b36d9dd8.png", // عکس آپلود شده
-  "/lovable-uploads/09f4b736-2fc4-4b02-a616-15b82f8204be.png", // عکس آپلود شده
-  "/lovable-uploads/2kztmt2kztmt2kzt.png", // عکس آپلود شده
-  "/lovable-uploads/xmtu9xmtu9xmtu9x.png", // عکس آپلود شده
-  "/lovable-uploads/moucwmoucwmoucwm.jpg", // عکس آپلود شده
-  "/images/gallery9.jpg", // جای خالی
-  "/images/gallery10.jpg", // جای خالی
+  "/lovable-uploads/ba47a0da-0b6f-409a-8168-aa905be1bde9.png",
+  "/lovable-uploads/8b90eb71-4292-43db-b6c7-21b47d37c0fd.png",
+  "/lovable-uploads/6be413f7-cef4-420e-a054-66a7b5b2e960.png",
+  "/lovable-uploads/9dc44a66-11bb-4f87-94c2-8895b36d9dd8.png",
+  "/lovable-uploads/09f4b736-2fc4-4b02-a616-15b82f8204be.png",
+  "/lovable-uploads/2kztmt2kztmt2kzt.png",
+  "/lovable-uploads/xmtu9xmtu9xmtu9x.png",
+  "/lovable-uploads/moucwmoucwmoucwm.jpg",
 ];
 
 export default function Gallery() {
