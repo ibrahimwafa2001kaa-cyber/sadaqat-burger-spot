@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import MenuSection from "@/components/MenuSection";
+import CompactMenu from "@/components/CompactMenu";
 import AboutSection from "@/components/AboutSection";
 import CustomerReviews from "@/components/CustomerReviews";
 import Gallery from "@/components/Gallery";
@@ -28,7 +28,7 @@ const Index = () => {
             <Header />
             <main id="main-content" className="flex-1">
               <HeroSection />
-              <MenuSection />
+              <CompactMenu />
               <AboutSection />
               <Gallery />
               <CustomerReviews />
