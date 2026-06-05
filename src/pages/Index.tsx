@@ -5,6 +5,8 @@ import AboutSection from "@/components/AboutSection";
 import CustomerReviews from "@/components/CustomerReviews";
 import Gallery from "@/components/Gallery";
 import GoogleMaps from "@/components/GoogleMaps";
+import FAQSection from "@/components/FAQSection";
+import FloatingContact from "@/components/FloatingContact";
 import Footer from "@/components/Footer";
 import { AppSidebar } from "@/components/AppSidebar";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
@@ -30,9 +32,11 @@ const Index = () => {
               <AboutSection />
               <Gallery />
               <CustomerReviews />
+              <FAQSection />
               <GoogleMaps />
             </main>
             <Footer />
+            <FloatingContact />
           </div>
         </div>
       </SidebarProvider>
